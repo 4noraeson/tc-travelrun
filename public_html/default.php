@@ -1,6 +1,6 @@
 <?php
 ## $Id$
-## $URL#
+## $URL$
 
 require '.config.php';
 
