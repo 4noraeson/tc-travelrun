@@ -1,4 +1,7 @@
 <?php
+## $Id$
+## $URL$
+
 require '.config.php';
 
 $conn = mysql_connect(SQL_HOST, SQL_USER, SQL_PASS) or die(mysql_error());
