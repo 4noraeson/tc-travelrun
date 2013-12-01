@@ -1,3 +1,6 @@
 <?php
+## $Id $
+## $URL $
+
 phpinfo();
 ?>
