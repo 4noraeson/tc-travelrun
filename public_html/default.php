@@ -22,7 +22,7 @@ mysql_query($sql) or die(mysql_error());
 // delete old data
 $sql = "delete from stock where utctime < now() - interval 32 day";
 mysql_query($sql) or die(mysql_error());
-$sql = "delete from post where postUTC < now() - interval 32 day";
+$sql = "delete from post where postUTC < now() - interval 3 day";
 mysql_query($sql) or die(mysql_error());
 
 // get last update date/time from the database
