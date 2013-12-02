@@ -6,12 +6,21 @@ require '.config.php';
 
 $cch = 'm';
 $pid = 1 * $_GET['p'];
-if ($pid < 1) die('invalid access');
+if ($pid < 0) die('invalid access');
 if ($pid > 1000000) die('invalid access');
 
 // open the database connection
 $conn = mysql_connect(SQL_HOST, SQL_USER, SQL_PASS) or die(mysql_error());
 mysql_select_db(SQL_DATA);
+
+if ($pid == 0) {
+  $sql = "select min(postid), max(postid) from post";
+  $res = mysql_query($sql) or die(mysql_error());
+  $middle = round((mysql_result($res, 0, 0) + mysql_result($res, 0, 1)) / 2);
+  mysql_free_result($res);
+  echo 'use p at approx ', $middle;
+  exit(0);
+}
 
 // get raw $_POST['data'] from the database
 $sql = "select postUTC, postdata from post where postid = $pid";
@@ -19,6 +28,7 @@ $res = mysql_query($sql) or die(mysql_error());
 if (mysql_num_rows($res) != 1) die('wrong parameter');
 $utc = mysql_result($res, 0, 0);
 $dat = mysql_result($res, 0, 1);
+mysql_free_result($res);
 // close the database connection
 mysql_close($conn);
 echo 'data is <pre>', $dat, '</pre><br>~~~~~~~~<br>';
