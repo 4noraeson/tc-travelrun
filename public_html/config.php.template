@@ -7,10 +7,4 @@ define('SQL_HOST', '');
 define('SQL_USER', '');
 define('SQL_PASS', '');
 define('SQL_DATA', '');
-
-# test database @ freesqldatabase.com
-define('FREE_HOST', '');
-define('FREE_USER', '');
-define('FREE_PASS', '');
-define('FREE_DATA', '');
 ?>
