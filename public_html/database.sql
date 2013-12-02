@@ -23,7 +23,6 @@ CREATE TABLE country (
   countryid int(11) NOT NULL,
   countryname varchar(100) COLLATE latin1_general_ci NOT NULL,
   letter char(1) COLLATE latin1_general_ci NOT NULL,
-  code2 char(2) COLLATE latin1_general_ci NOT NULL,
   flower int(11) NOT NULL,
   PRIMARY KEY (countryid),
   UNIQUE KEY letter (letter)
@@ -33,17 +32,17 @@ CREATE TABLE country (
 -- Dumping data for table 'country'
 --
 
-INSERT INTO country VALUES(1, 'Mexico', 'm', 'mx', 260);
-INSERT INTO country VALUES(2, 'Cayman Islands', 'i', 'ci', 617);
-INSERT INTO country VALUES(3, 'Canada', 'c', 'ca', 263);
-INSERT INTO country VALUES(4, 'Hawaii', 'h', 'hw', 264);
-INSERT INTO country VALUES(5, 'United Kingdom', 'u', 'uk', 267);
-INSERT INTO country VALUES(6, 'Argentina', 'a', 'ar', 271);
-INSERT INTO country VALUES(7, 'Switzerland', 's', 'sw', 272);
-INSERT INTO country VALUES(8, 'Japan', 'j', 'jp', 277);
-INSERT INTO country VALUES(9, 'China', 'x', 'ch', 276);
-INSERT INTO country VALUES(10, 'UAE', 'e', 'ua', 385);
-INSERT INTO country VALUES(11, 'South Africa', 'z', 'sa', 282);
+INSERT INTO country VALUES(1, 'Mexico', 'm', 260);
+INSERT INTO country VALUES(2, 'Cayman Islands', 'i', 617);
+INSERT INTO country VALUES(3, 'Canada', 'c', 263);
+INSERT INTO country VALUES(4, 'Hawaii', 'h', 264);
+INSERT INTO country VALUES(5, 'United Kingdom', 'u', 267);
+INSERT INTO country VALUES(6, 'Argentina', 'a', 271);
+INSERT INTO country VALUES(7, 'Switzerland', 's', 272);
+INSERT INTO country VALUES(8, 'Japan', 'j', 277);
+INSERT INTO country VALUES(9, 'China', 'x', 276);
+INSERT INTO country VALUES(10, 'UAE', 'e', 385);
+INSERT INTO country VALUES(11, 'South Africa', 'z', 282);
 
 -- --------------------------------------------------------
 
