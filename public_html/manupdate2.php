@@ -12,6 +12,10 @@ $flower = 1 * $_POST['flower'];
 
 if ($flower && isset($country[$flower]) && (trim($_POST['gmt']) != '') && (trim($_POST['qtd']) != '')) {
   if (preg_match('@(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d\d, \d\d\d\d \d\d:\d\d@', $_POST['time'], $matches) == 1) {
+    // open the database connection
+    $conn = mysql_connect(SQL_HOST, SQL_USER, SQL_PASS) or die(mysql_error());
+    mysql_select_db(SQL_DATA);
+
     $flowertime = strtotime($matches[0]);
     $gmtoffset = 1 * $_POST['gmt'];
     $unixtime = date('Y-m-d H:i:s', $flowertime - 60*60*$gmtoffset);
@@ -19,10 +23,6 @@ if ($flower && isset($country[$flower]) && (trim($_POST['gmt']) != '') && (trim(
     $sender = 'web';
     if (isset($_POST['sender'])) $sender = $_POST['sender'];
     $safesender = mysql_real_escape_string($sender);
-
-    // open the database connection
-    $conn = mysql_connect(SQL_HOST, SQL_USER, SQL_PASS) or die(mysql_error());
-    mysql_select_db(SQL_DATA);
 
     $sql = "insert into stock (utctime, country, item, price, quantity, manual, sender) values ('$unixtime', $country[$flower], $flower, 0, $quantity, 1, '$safesender')";
     mysql_query($sql) or die(mysql_error());
