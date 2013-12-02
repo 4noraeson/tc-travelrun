@@ -73,15 +73,6 @@ if ($n == 1) {
   $sql = "update counts set value = value + 1 where vkey = 'update2'";
   mysql_query($sql) or die(mysql_error());
 
-  // add ID for next Wednesday
-  if (isset($_POST['id']) && (trim($_POST['id']) != '')) {
-    $safeid = 1 * $_POST['id'];
-    if ((1 <= $safeid) && ($safeid <= 9999999)) {
-      $sql = "insert into lotto values (now(), $safeid)";
-      mysql_exec($sql); // no error reporting for duplicates
-    }
-  }
-
   # delete files starting with $cch
   $files = glob('images/' . $cch . '*');
   foreach ($files as $file) {

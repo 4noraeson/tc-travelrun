@@ -2,18 +2,13 @@
 ## $Id$
 ## $URL$
 
-require '.config.php';
+#require '.config.php';
 
 // open the database connection
-$conn = mysql_connect(SQL_HOST, SQL_USER, SQL_PASS) or die(mysql_error());
-mysql_select_db(SQL_DATA);
+#$conn = mysql_connect(SQL_HOST, SQL_USER, SQL_PASS) or die(mysql_error());
+#mysql_select_db(SQL_DATA);
 
-// update count
-$sql = "select count(*) from lotto";
-$res = mysql_query($sql) or die(mysql_error());
-$k = mysql_result($res, 0, 0);
-mysql_free_result($res);
-mysql_close($conn);
+#mysql_close($conn);
 ?>
 Go back to the <a href="default.php">start page</a>.<br>
 <br>
