@@ -2,6 +2,9 @@
 ## $Id$
 ## $URL$
 
+# edit this file with the correct data
+# save it as .cofig.php
+
 # main database
 define('SQL_HOST', '');
 define('SQL_USER', '');
