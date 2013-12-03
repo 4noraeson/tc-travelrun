@@ -771,24 +771,6 @@ INSERT INTO itemtype VALUES(24, 'Miscellaneous', '#ddd');
 -- --------------------------------------------------------
 
 --
--- Table structure for table 'lastdrugs'
---
-
-CREATE VIEW lastdrugs AS
-  select stock.item AS item,
-         stock.country AS country,
-         max(stock.utctime) AS lastutc
-  from stock
-  where stock.item in (
-    select item.itemid
-    from item
-    where (item.itemtype = 3)
-  )
-  group by stock.item, stock.country;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table 'post'
 --
 
@@ -821,4 +803,22 @@ CREATE TABLE stock (
   KEY country (country),
   KEY item (item)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=51013 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'lastdrugs'
+--
+
+CREATE VIEW lastdrugs AS
+  select stock.item AS item,
+         stock.country AS country,
+         max(stock.utctime) AS lastutc
+  from stock
+  where stock.item in (
+    select item.itemid
+    from item
+    where (item.itemtype = 3)
+  )
+  group by stock.item, stock.country;
 
