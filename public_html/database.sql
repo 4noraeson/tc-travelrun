@@ -822,3 +822,12 @@ CREATE VIEW lastdrugs AS
   )
   group by stock.item, stock.country;
 
+
+-- --------------------------------------------------------
+
+--
+-- Changes to table 'stock' at 2013-12-03
+--
+
+ALTER TABLE stock CHANGE price price BIGINT(11) NOT NULL;
+
