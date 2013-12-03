@@ -40,14 +40,13 @@ if ($n == 1) {
   $country = $matches[1];
   echo 'Country is: ', $country, '<br>';
 
-//  if (preg_match_all('@(?:\[?[0-9A-Z a-z-]+\]?)?\s*\t\s*([0-9A-Z a-z-]+)\s+\$([0-9,]+)\s+([0-9,]+) in stock\s+Buy@', $dat, $matches, PREG_SET_ORDER)) {
-  if (preg_match_all('@\s*([0-9A-Z a-z-]+)\s+\$([0-9,]+)\s+([0-9,]+) in stock\s+Buy@', $dat, $matches, PREG_SET_ORDER)) {
+  if (preg_match_all('@\s*([0-9A-Z &a-z-]+)\s+\$([0-9,]+)\s+([0-9,]+) in stock\s+Buy@', $dat, $matches, PREG_SET_ORDER)) {
     echo '2nd match all worked<br>';
     foreach ($matches as $info) {
       $itemname = trim($info[1]);
       $itemcost = 1 * str_replace(',', '', $info[2]);
       $itemleft = 1 * str_replace(',', '', $info[3]);
-      echo "got $itemname, $itemcost, $itemleft<br>";
+      echo "got ", htmlentities($itemname), ", $itemcost, $itemleft<br>";
     }
   } else {
     echo '2nd match all failed<br>';

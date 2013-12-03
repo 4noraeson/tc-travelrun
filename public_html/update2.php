@@ -42,8 +42,7 @@ if ($n == 1) {
   if ($cid != 0) {
     $gotflower = 0;
 
-//  if (preg_match_all('@(?:\[?[0-9A-Z a-z-]+\]?)?\s*\t\s*([0-9A-Z a-z-]+)\s+\$([0-9,]+)\s+([0-9,]+) in stock\s+Buy@', $_POST['data'], $matches, PREG_SET_ORDER)) {
-    if (preg_match_all('@\s*([0-9A-Z a-z-]+)\s+\$([0-9,]+)\s+([0-9,]+) in stock\s+Buy@', $_POST['data'], $matches, PREG_SET_ORDER)) {
+    if (preg_match_all('@\s*([0-9A-Z &a-z-]+)\s+\$([0-9,]+)\s+([0-9,]+) in stock\s+Buy@', $_POST['data'], $matches, PREG_SET_ORDER)) {
       foreach ($matches as $info) {
         $itemname = trim($info[1]);
         $safe_itemname = mysql_real_escape_string($itemname);
