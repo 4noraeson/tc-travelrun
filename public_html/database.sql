@@ -826,7 +826,7 @@ CREATE VIEW lastdrugs AS
 -- --------------------------------------------------------
 
 --
--- Changes to table 'stock' at 2013-12-03
+-- Changes to table 'stock'
 --
 
 ALTER TABLE stock CHANGE price price BIGINT(11) NOT NULL;
