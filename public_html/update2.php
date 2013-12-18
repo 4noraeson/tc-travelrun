@@ -1,6 +1,5 @@
 <?php
 ## $Id$
-## $URL$
 
 require '.config.php';
 
@@ -62,10 +61,10 @@ if ($n == 1) {
         }
       }
     }
-  }
-  if ($gotflower == 0) {
-    $sql5 = "insert into stock (stockid, utctime, country, item, price, quantity, manual) values (NULL, utc_timestamp(), $cid, $fid, 0, 0, 0)";
-    mysql_query($sql5) or die(mysql_error());
+    if ($gotflower == 0) {
+      $sql5 = "insert into stock (stockid, utctime, country, item, price, quantity, manual) values (NULL, utc_timestamp(), $cid, $fid, 0, 0, 0)";
+      mysql_query($sql5) or die(mysql_error());
+    }
   }
 
   // update count
