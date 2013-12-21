@@ -3,7 +3,7 @@
 
 require '.config.php';
 
-echo 'Go back to the <a href="default.php">start page</a>.<br><br>';
+echo 'Go back to the <a href="index.php">start page</a>.<br><br>';
 
 // open the database connection
 $conn = mysql_connect(SQL_HOST, SQL_USER, SQL_PASS) or die(mysql_error());

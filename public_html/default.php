@@ -119,47 +119,47 @@ echo '<br>';
 
 echo 'Choose a country: ';
 if ($cc == 'm') echo '<b>';
-echo '<a href="default.php?c=m" title="', $cvk['m'], ' views">Mexico</a>, ';
+echo '<a href="index.php?c=m" title="', $cvk['m'], ' views">Mexico</a>, ';
 if ($cc == 'm') echo '</b>';
 
 if ($cc == 'i') echo '<b>';
-echo '<a href="default.php?c=i" title="', $cvk['i'], ' views">Cayman Islands</a>, ';
+echo '<a href="index.php?c=i" title="', $cvk['i'], ' views">Cayman Islands</a>, ';
 if ($cc == 'i') echo '</b>';
 
 if ($cc == 'c') echo '<b>';
-echo '<a href="default.php?c=c" title="', $cvk['c'], ' views">Canada</a>, ';
+echo '<a href="index.php?c=c" title="', $cvk['c'], ' views">Canada</a>, ';
 if ($cc == 'c') echo '</b>';
 
 if ($cc == 'h') echo '<b>';
-echo '<a href="default.php?c=h" title="', $cvk['h'], ' views">Hawaii</a>, ';
+echo '<a href="index.php?c=h" title="', $cvk['h'], ' views">Hawaii</a>, ';
 if ($cc == 'h') echo '</b>';
 
 if ($cc == 'u') echo '<b>';
-echo '<a href="default.php?c=u" title="', $cvk['u'], ' views">United Kingdom</a>, ';
+echo '<a href="index.php?c=u" title="', $cvk['u'], ' views">United Kingdom</a>, ';
 if ($cc == 'u') echo '</b>';
 
 if ($cc == 'a') echo '<b>';
-echo '<a href="default.php?c=a" title="', $cvk['a'], ' views">Argentina</a>, ';
+echo '<a href="index.php?c=a" title="', $cvk['a'], ' views">Argentina</a>, ';
 if ($cc == 'a') echo '</b>';
 
 if ($cc == 's') echo '<b>';
-echo '<a href="default.php?c=s" title="', $cvk['s'], ' views">Switzerland</a>, ';
+echo '<a href="index.php?c=s" title="', $cvk['s'], ' views">Switzerland</a>, ';
 if ($cc == 's') echo '</b>';
 
 if ($cc == 'j') echo '<b>';
-echo '<a href="default.php?c=j" title="', $cvk['j'], ' views">Japan</a>, ';
+echo '<a href="index.php?c=j" title="', $cvk['j'], ' views">Japan</a>, ';
 if ($cc == 'j') echo '</b>';
 
 if ($cc == 'x') echo '<b>';
-echo '<a href="default.php?c=x" title="', $cvk['x'], ' views">China</a>, ';
+echo '<a href="index.php?c=x" title="', $cvk['x'], ' views">China</a>, ';
 if ($cc == 'x') echo '</b>';
 
 if ($cc == 'e') echo '<b>';
-echo '<a href="default.php?c=e" title="', $cvk['e'], ' views">UAE</a>, ';
+echo '<a href="index.php?c=e" title="', $cvk['e'], ' views">UAE</a>, ';
 if ($cc == 'e') echo '</b>';
 
 if ($cc == 'z') echo '<b>';
-echo '<a href="default.php?c=z" title="', $cvk['z'], ' views">South Africa</a>';
+echo '<a href="index.php?c=z" title="', $cvk['z'], ' views">South Africa</a>';
 if ($cc == 'z') echo '</b>';
 
 echo '<br>';

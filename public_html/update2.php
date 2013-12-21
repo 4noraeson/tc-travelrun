@@ -83,6 +83,6 @@ mysql_close($conn);
 
 usleep(100000); // sleep 0.1 seconds: it's hardly noticeable and it, hopefully, gives time for image to be created
 
-header('Location: default.php?c=' . $cch);
-exit('Redirected to <a href="default.php?c=' . $cch . '">the start page</a>.');
+header('Location: index.php?c=' . $cch);
+exit('Redirected to <a href="index.php?c=' . $cch . '">the start page</a>.');
 ?>

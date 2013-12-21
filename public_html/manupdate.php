@@ -24,7 +24,7 @@ mysql_free_result($res);
 mysql_close($conn);
 
 echo '<h3>Manual Update</h3>';
-echo 'Return to the <a href="default.php">start page</a>.<br>';
+echo 'Return to the <a href="index.php">start page</a>.<br>';
 
 echo '<br>';
 echo '<i>Data from this update is only shown in the graph.</i>';

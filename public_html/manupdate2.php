@@ -39,15 +39,15 @@ if ($flower && isset($country[$flower]) && (trim($_POST['gmt']) != '') && (trim(
 
     echo '<b>Flower updated. The data will only be used to draw dots on the graph.</b><br>';
     echo '<br>';
-    echo '<a href="manupdate.php">Update another</a> or return to the <a href="default.php">start page</a>.';
+    echo '<a href="manupdate.php">Update another</a> or return to the <a href="index.php">start page</a>.';
   } else {
     echo '<b>Update failed.</b><br>';
     echo '<br>';
-    echo '<a href="manupdate.php">Try updating again</a> or return to the <a href="default.php">start page</a>.';
+    echo '<a href="manupdate.php">Try updating again</a> or return to the <a href="index.php">start page</a>.';
   }
 } else {
   echo '<b>Unable to extract time.</b><br>';
   echo '<br>';
-  echo '<a href="manupdate.php">Try updating again</a> or return to the <a href="default.php">start page</a>.';
+  echo '<a href="manupdate.php">Try updating again</a> or return to the <a href="index.php">start page</a>.';
 }
 ?>

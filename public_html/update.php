@@ -9,7 +9,7 @@
 
 #mysql_close($conn);
 ?>
-Go back to the <a href="default.php">start page</a>.<br>
+Go back to the <a href="index.php">start page</a>.<br>
 <br>
 <form method="post" action="update2.php">
   <input type="hidden" name="sender" value="web">
