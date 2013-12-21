@@ -795,7 +795,7 @@ CREATE TABLE stock (
   utctime datetime NOT NULL,
   country int(11) NOT NULL,
   item int(11) NOT NULL,
-  price int(11) NOT NULL,
+  price bigint(11) NOT NULL,
   quantity int(11) NOT NULL,
   manual tinyint(4) NOT NULL,
   sender varchar(78) COLLATE latin1_general_ci NOT NULL,
@@ -803,31 +803,4 @@ CREATE TABLE stock (
   KEY country (country),
   KEY item (item)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=51013 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table 'lastdrugs'
---
-
-CREATE VIEW lastdrugs AS
-  select stock.item AS item,
-         stock.country AS country,
-         max(stock.utctime) AS lastutc
-  from stock
-  where stock.item in (
-    select item.itemid
-    from item
-    where (item.itemtype = 3)
-  )
-  group by stock.item, stock.country;
-
-
--- --------------------------------------------------------
-
---
--- Changes to table 'stock'
---
-
-ALTER TABLE stock CHANGE price price BIGINT(11) NOT NULL;
 
