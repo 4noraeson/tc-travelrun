@@ -2,7 +2,7 @@
 ## $Id$
 
 # edit this file with the correct data
-# save it as .cofig.php
+# save it as .config.php
 
 # main database
 define('SQL_HOST', '');
