@@ -207,5 +207,4 @@ echo '<img src="fgraph.php?c=', $cc, '">';
 
 echo '<br><br>';
 echo '<i>Source code available on a <a href="http://code.google.com/p/tc-travelrun/">subversion repository</a>.</i><br>';
-echo '<i>Travelrun site hosted free at <a href="http://www.000webhost.com/">http://www.000webhost.com/</a>.</i>';
 ?>
