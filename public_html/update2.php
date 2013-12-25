@@ -40,20 +40,21 @@ if ($n == 1) {
   mysql_free_result($res2);
   if ($cid != 0) {
     $gotflower = 0;
+    $items = array();
+    $sql_items = "select itemname, itemid from item";
+    $res_items = mysql_query($sql_items) or die(mysql_error());
+    while ($row_items = mysql_fetch_row($res_items)) {
+      $items[$row_items[0]] = $row_items[1];
+    }
+    mysql_free_result($res_items);
 
     if (preg_match_all('@\s*([0-9A-Z &a-z-]+)\s+\$([0-9,]+)\s+([0-9,]+) in stock\s+Buy@', $_POST['data'], $matches, PREG_SET_ORDER)) {
       foreach ($matches as $info) {
         $itemname = trim($info[1]);
-        $safe_itemname = mysql_real_escape_string($itemname);
         $itemcost = 1 * str_replace(',', '', $info[2]);
         $itemleft = 1 * str_replace(',', '', $info[3]);
-        $sql3 = "select itemid from item where itemname = '$safe_itemname'";
-        $res3 = mysql_query($sql3) or die(mysql_error());
         $itemid = 0;
-        if (mysql_num_rows($res3) == 1) {
-          $itemid = mysql_result($res3, 0, 0);
-        }
-        mysql_free_result($res3);
+        if (isset($items[$itemname])) $itemid = $items[$itemname];
         if ($itemid != 0) {
           $sql4 = "insert into stock (stockid, utctime, country, item, price, quantity, manual, sender) values (NULL, utc_timestamp(), $cid, $itemid, $itemcost, $itemleft, 0, '$s')";
           mysql_query($sql4) or die(mysql_error());
