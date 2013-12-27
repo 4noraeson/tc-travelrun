@@ -9,4 +9,7 @@ define('SQL_HOST', '');
 define('SQL_USER', '');
 define('SQL_PASS', '');
 define('SQL_DATA', '');
+
+define('SQLDIRECT_DELAY', ''); // Delay in milliseconds for sqldirect.php
+define('SQLDIRECT_PASSWORD', ''); // Password for access to the database through sqldirect.php
 ?>
