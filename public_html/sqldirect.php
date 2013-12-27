@@ -16,6 +16,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $res = mysql_query($sql) or die(mysql_error());
     if (mysql_num_rows($res) > 0) {
       echo '<table border="1">';
+      echo '<tr>';
+      for ($k = 0; $k < mysql_num_fields($res); $k++) {
+        echo '<th>';
+        echo htmlentities(mysql_field_name($res, $k));
+        echo '</th>';
+      }
+      echo '</tr>';
       while ($row = mysql_fetch_row($res)) {
         echo '<tr>';
         foreach ($row as $value) {
