@@ -85,6 +85,7 @@ mysql_free_result($res);
 // close the database connection
 mysql_close($conn);
 
+httpheader();
 echo htmlheader('travelrun');
 
 echo 'Current time is ', gmdate('Y-m-d H:i:s'), ' GMT.<br>';
@@ -188,7 +189,7 @@ echo '</table>';
 echo '<br><br>';
 
 echo '<i><font size="smaller">If the graph does not appear, refresh the page</font></i><br>';
-echo '<img src="fgraph.php?c=', $cc, '">';
+echo '<img alt="flower graph" src="fgraph.php?c=', $cc, '">';
 
 echo '<br><br>';
 echo '<i>Source code available on a <a href="http://code.google.com/p/tc-travelrun/">subversion repository</a>.</i><br>';
