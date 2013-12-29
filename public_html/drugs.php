@@ -2,6 +2,10 @@
 ## $Id$
 
 require '.config.php';
+require 'fx.inc.php';
+
+httpheader();
+echo htmlheader('travelrun -- drug information');
 
 echo 'Go back to the <a href="index.php">start page</a>.<br><br>';
 
@@ -58,13 +62,15 @@ foreach ($drugs as $d) {
     }
   }
 
-  echo '<tr bgcolor="', $bgcolors[$lastcolor], '">';
+  echo '<tr style="background-color: ', $bgcolors[$lastcolor], '; color: black;">';
   echo '<td>&nbsp;', $d[1], '&nbsp;</td>';
   echo '<td>&nbsp;', $d[3], '&nbsp;</td>';
-  echo '<td align="center">&nbsp;', number_format($delta, 0), ' ', $deltaunits, (($delta >= 1.5) ? 's' : ''), ' ago&nbsp;</td>';
-  echo '<td align="right">&nbsp;', number_format($d[6], 0, '', ','), '&nbsp;</td>';
-  echo '<td align="right">&nbsp;$', number_format($d[5],0, '', ','), '&nbsp;</td>';
+  echo '<td class="valuedata">&nbsp;', number_format($delta, 0), ' ', $deltaunits, (($delta >= 1.5) ? 's' : ''), ' ago&nbsp;</td>';
+  echo '<td class="valuedata">&nbsp;', number_format($d[6], 0, '', ','), '&nbsp;</td>';
+  echo '<td class="valuedata">&nbsp;$', number_format($d[5],0, '', ','), '&nbsp;</td>';
   echo '</tr>';
 }
 echo '</table>';
+
+echo htmlfooter();
 ?>
