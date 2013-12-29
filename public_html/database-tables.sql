@@ -734,7 +734,6 @@ INSERT INTO item VALUES(491, 24, 'Zombie Brain');
 CREATE TABLE itemtype (
   itemtypeid int(11) NOT NULL AUTO_INCREMENT,
   itemtypename varchar(100) COLLATE latin1_general_ci NOT NULL,
-  bgcolor varchar(50) COLLATE latin1_general_ci NOT NULL,
   cssclass varchar(50) COLLATE latin1_general_ci NOT NULL,
   PRIMARY KEY (itemtypeid)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=25 ;
@@ -743,31 +742,31 @@ CREATE TABLE itemtype (
 -- Dumping data for table 'itemtype'
 --
 
-INSERT INTO itemtype VALUES(1, 'Flowers', 'lightgreen', 'flower');
-INSERT INTO itemtype VALUES(2, 'Plushies', 'pink', 'plushie');
-INSERT INTO itemtype VALUES(3, 'Drugs', 'yellow', 'drug');
-INSERT INTO itemtype VALUES(4, 'Primary Weapons', 'white', 'default');
-INSERT INTO itemtype VALUES(5, 'Secondary Weapons', 'white', 'default');
-INSERT INTO itemtype VALUES(6, 'Melee Weapons', 'white', 'default');
-INSERT INTO itemtype VALUES(7, 'Temporary Items', 'white', 'default');
-INSERT INTO itemtype VALUES(8, 'Armour', 'white', 'default');
-INSERT INTO itemtype VALUES(9, 'Candy', 'white', 'default');
-INSERT INTO itemtype VALUES(10, 'Clothes', 'white', 'default');
-INSERT INTO itemtype VALUES(11, 'Other boosters', 'white', 'default');
-INSERT INTO itemtype VALUES(12, 'Alcohol', 'lightcyan', 'alcohol');
-INSERT INTO itemtype VALUES(13, 'Jewelry', 'white', 'default');
-INSERT INTO itemtype VALUES(14, 'Medical Items', 'white', 'default');
-INSERT INTO itemtype VALUES(15, 'Electronic Items', 'white', 'default');
-INSERT INTO itemtype VALUES(16, 'Enhancers', 'white', 'default');
-INSERT INTO itemtype VALUES(17, 'Special Items', 'white', 'default');
-INSERT INTO itemtype VALUES(-1, '(unknown)', 'white', 'default');
-INSERT INTO itemtype VALUES(18, 'Energy Drinks', 'white', 'default');
-INSERT INTO itemtype VALUES(19, 'Cars', 'white', 'default');
-INSERT INTO itemtype VALUES(20, 'Viruses', 'white', 'default');
-INSERT INTO itemtype VALUES(21, 'Artifacts', 'white', 'default');
-INSERT INTO itemtype VALUES(22, 'Supply Packs', 'white', 'default');
-INSERT INTO itemtype VALUES(23, 'Collectibles', 'white', 'default');
-INSERT INTO itemtype VALUES(24, 'Miscellaneous', 'silver', 'misc');
+INSERT INTO itemtype VALUES(1, 'Flowers', 'flower');
+INSERT INTO itemtype VALUES(2, 'Plushies', 'plushie');
+INSERT INTO itemtype VALUES(3, 'Drugs', 'drug');
+INSERT INTO itemtype VALUES(4, 'Primary Weapons', 'default');
+INSERT INTO itemtype VALUES(5, 'Secondary Weapons', 'default');
+INSERT INTO itemtype VALUES(6, 'Melee Weapons', 'default');
+INSERT INTO itemtype VALUES(7, 'Temporary Items', 'default');
+INSERT INTO itemtype VALUES(8, 'Armour', 'default');
+INSERT INTO itemtype VALUES(9, 'Candy', 'default');
+INSERT INTO itemtype VALUES(10, 'Clothes', 'default');
+INSERT INTO itemtype VALUES(11, 'Other boosters', 'default');
+INSERT INTO itemtype VALUES(12, 'Alcohol', 'alcohol');
+INSERT INTO itemtype VALUES(13, 'Jewelry', 'default');
+INSERT INTO itemtype VALUES(14, 'Medical Items', 'default');
+INSERT INTO itemtype VALUES(15, 'Electronic Items', 'default');
+INSERT INTO itemtype VALUES(16, 'Enhancers', 'default');
+INSERT INTO itemtype VALUES(17, 'Special Items', 'default');
+INSERT INTO itemtype VALUES(-1, '(unknown)', 'default');
+INSERT INTO itemtype VALUES(18, 'Energy Drinks', 'default');
+INSERT INTO itemtype VALUES(19, 'Cars', 'default');
+INSERT INTO itemtype VALUES(20, 'Viruses', 'default');
+INSERT INTO itemtype VALUES(21, 'Artifacts', 'default');
+INSERT INTO itemtype VALUES(22, 'Supply Packs', 'default');
+INSERT INTO itemtype VALUES(23, 'Collectibles', 'default');
+INSERT INTO itemtype VALUES(24, 'Miscellaneous', 'misc');
 
 -- --------------------------------------------------------
 
