@@ -7,11 +7,11 @@ a:active { background-color: snow; color: green; }
 .valuedata { text-align: right; }
 
 div.timeinfo {}
-div.updatelinks { font-size: 133%; }
+div.updatelinks { margin-top: 2em; margin-bottom: 2em; font-size: 133%; }
 div.nav {}
-div.itemdata {}
+div.itemdata { margin-top: 2em; margin-bottom: 2em; }
 div.flowerchart {}
-div.footer {}
+div.footer { margin-top: 2em; }
 
 tr.default { background-color: snow; color: black; }
 tr.drug { background-color: yellow; color: black; }
