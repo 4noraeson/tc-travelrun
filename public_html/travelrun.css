@@ -7,7 +7,7 @@ a:active { background-color: snow; color: green; }
 .valuedata { text-align: right; }
 
 div.timeinfo {}
-div.updatelinks {}
+div.updatelinks { font-size: 133%; }
 div.nav {}
 div.itemdata {}
 div.flowerchart {}

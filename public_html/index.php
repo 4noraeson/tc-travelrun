@@ -95,14 +95,14 @@ echo '</div>';
 
 echo '<div class="updatelinks">';
 $ratio = $upk / $viewk;
-echo '<h3>When you\'re in a foreign country, please <a href="update.php" title="update ratio: ';
+echo 'When you\'re in a foreign country, please <a href="update.php" title="update ratio: ';
 if ($ratio < 0.0095) {
   echo number_format(1000 * $ratio, 2), '&permil;';
 } else {
   echo number_format(100 * $ratio, 2), '%';
 }
 echo '">update the data</a>. Thank you.<br>';
-echo '<span class="minor">There is also an <a href="manupdate.php">manual update feature</a> for isolated data on the flower thread.</span></h3>';
+echo '<span class="minor">There is also an <a href="manupdate.php">manual update feature</a> for isolated data on the flower thread.</span>';
 echo '</div>';
 
 echo '<div class="nav">';
