@@ -6,6 +6,13 @@ a:active { background-color: black; color: orangered; }
 .minor { font-size: smaller; }
 .valuedata { text-align: right; }
 
+div.timeinfo {}
+div.updatelinks {}
+div.nav {}
+div.itemdata {}
+div.flowerchart {}
+div.footer {}
+
 tr.default { background-color: black; color: orange; }
 tr.drug { background-color: black; color: orange; }
 tr.flower { background-color: black; color: orange; }

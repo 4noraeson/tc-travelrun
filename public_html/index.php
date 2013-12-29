@@ -88,10 +88,12 @@ mysql_close($conn);
 httpheader();
 echo htmlheader('travelrun', $_GET['css']);
 
+echo '<div class="timeinfo">';
 echo 'Current time is ', gmdate('Y-m-d H:i:s'), ' GMT.<br>';
-echo 'Last update was made at ', $lastupdate, ' GMT for ', $lastcountry, '.<br>';
-echo '<br>';
+echo 'Last update was made at ', $lastupdate, ' GMT for ', $lastcountry, '.';
+echo '</div>';
 
+echo '<div class="updatelinks">';
 $ratio = $upk / $viewk;
 echo '<h3>When you\'re in a foreign country, please <a href="update.php" title="update ratio: ';
 if ($ratio < 0.0095) {
@@ -100,9 +102,10 @@ if ($ratio < 0.0095) {
   echo number_format(100 * $ratio, 2), '%';
 }
 echo '">update the data</a>. Thank you.<br>';
-echo '<span class="minor">There is also an <a href="manupdate.php">manual update feature</a> for isolated data on the flower thread.</span></h3><br>';
-echo '<br>';
+echo '<span class="minor">There is also an <a href="manupdate.php">manual update feature</a> for isolated data on the flower thread.</span></h3>';
+echo '</div>';
 
+echo '<div class="nav">';
 echo 'Choose a country: ';
 if ($cc == 'm') echo '<b>';
 echo '<a href="index.php?c=m" title="', $cvk['m'], ' views">Mexico</a>, ';
@@ -150,8 +153,9 @@ if ($cc == 'z') echo '</b>';
 
 echo '<br>';
 echo 'or look at the <a href="drugs.php">most recent drug information</a> across all countries.';
+echo '</div>';
 
-echo '<br><br>';
+echo '<div class="itemdata">';
 $gmnow = gmdate('Y-m-d H:i:s');
 $unixlast = strtotime($lastlocalupdate);
 $unixnow = strtotime($gmnow);
@@ -185,15 +189,17 @@ foreach ($extradata as $extra) {
   echo '</tr>';
 }
 echo '</table>';
+echo '</div>';
 
-echo '<br><br>';
-
+echo '<div="flowerchart">';
 echo '<i><span class="info">If the graph does not appear, refresh the page</span></i><br>';
 echo '<img alt="flower graph" src="fgraph.php?c=', $cc, '">';
+echo '</div>';
 
-echo '<br><br>';
+echo '<div="footer">';
 echo '<i>Source code available on a <a href="http://code.google.com/p/tc-travelrun/">subversion repository</a>.</i><br>';
 echo '<i>Travelrun writen by <a href="http://www.torn.com/profiles.php?XID=1757971" target="new">ebcdic</a>. If you like this page, please consider <a href="http://www.torn.com/sendcash.php?XID=1275358" target="new">donating</a> to the cause...</i>';
+echo '</div>';
 
 echo htmlfooter();
 ?>
