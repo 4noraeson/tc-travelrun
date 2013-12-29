@@ -1,4 +1,7 @@
 body { background-color: snow; color: black; }
+a:link { background-color: snow; color: blue; }
+a:hover { background-color: snow; color: red; }
+a:visited { background-color: snow; color: magenta; }
 .minor { font-size: smaller; }
 .valuedata { text-align: right; }
 

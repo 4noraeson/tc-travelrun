@@ -4,3 +4,10 @@ a:hover { background-color: black; color: orangered; }
 a:visited { background-color: black; color: orangered; }
 .minor { font-size: smaller; }
 .valuedata { text-align: right; }
+
+tr.default { background-color: black; color: orange; }
+tr.drug { background-color: black; color: orange; }
+tr.flower { background-color: black; color: orange; }
+tr.plushie { background-color: black; color: orange; }
+tr.alcohol { background-color: black; color: orange; }
+tr.misc { background-color: black; color: orange; }
