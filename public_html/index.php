@@ -100,7 +100,7 @@ if ($ratio < 0.0095) {
   echo number_format(100 * $ratio, 2), '%';
 }
 echo '">update the data</a>. Thank you.<br>';
-echo '<span style="font-size: small">There is also an <a href="manupdate.php">manual update feature</a> for isolated data on the flower thread.</span></h3><br>';
+echo '<span class="info">There is also an <a href="manupdate.php">manual update feature</a> for isolated data on the flower thread.</span></h3><br>';
 echo '<br>';
 
 echo 'Choose a country: ';
@@ -175,20 +175,20 @@ if ($delta < 60) {
 echo 'Items in ', $cname, ' at ', $lastlocalupdate, ' GMT ';
       echo '<b>(', number_format($delta, 0), ' ', $deltaunits, (($delta >= 1.5) ? 's' : ''), ' ago)</b><br>';
 echo '<table border="1">';
-echo '<tr><th>TYPE</th><th>ITEM</th><th>PRICE</th><th>QUANTITY</th></tr>';
+echo '<tr><th>Type</th><th>Item</th><th>Price</th><th>Quantity</th></tr>';
 foreach ($extradata as $extra) {
-  echo '<tr bgcolor="', $extra[4], '">';
+  echo '<tr style="background-color: ', $extra[4], '; color: black;">';
   echo '<td>&nbsp;', $extra[0], '&nbsp;</td>';
   echo '<td>&nbsp;', $extra[1], '&nbsp;</td>';
-  echo '<td align="right">&nbsp;$', number_format($extra[2], 0, '', ','), '&nbsp;</td>';
-  echo '<td align="right">&nbsp;', number_format($extra[3], 0, '', ','), '&nbsp;</td>';
+  echo '<td class="valuedata">&nbsp;$', number_format($extra[2], 0, '', ','), '&nbsp;</td>';
+  echo '<td class="valuedata">&nbsp;', number_format($extra[3], 0, '', ','), '&nbsp;</td>';
   echo '</tr>';
 }
 echo '</table>';
 
 echo '<br><br>';
 
-echo '<i><font size="smaller">If the graph does not appear, refresh the page</font></i><br>';
+echo '<i><span class="info">If the graph does not appear, refresh the page</span></i><br>';
 echo '<img alt="flower graph" src="fgraph.php?c=', $cc, '">';
 
 echo '<br><br>';

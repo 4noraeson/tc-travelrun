@@ -1,1 +1,3 @@
 body { background-color: snow; color: black; }
+.minor { font-size: smaller; }
+.valuedata { text-align: right; }
