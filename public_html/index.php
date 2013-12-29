@@ -191,12 +191,12 @@ foreach ($extradata as $extra) {
 echo '</table>';
 echo '</div>';
 
-echo '<div="flowerchart">';
+echo '<div class="flowerchart">';
 echo '<i><span class="info">If the graph does not appear, refresh the page</span></i><br>';
 echo '<img alt="flower graph" src="fgraph.php?c=', $cc, '">';
 echo '</div>';
 
-echo '<div="footer">';
+echo '<div class="footer">';
 echo '<i>Source code available on a <a href="http://code.google.com/p/tc-travelrun/">subversion repository</a>.</i><br>';
 echo '<i>Travelrun writen by <a href="http://www.torn.com/profiles.php?XID=1757971" target="new">ebcdic</a>. If you like this page, please consider <a href="http://www.torn.com/sendcash.php?XID=1275358" target="new">donating</a> to the cause...</i>';
 echo '</div>';
