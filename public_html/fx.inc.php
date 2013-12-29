@@ -4,7 +4,7 @@ function httpheader() {
   header('Cache-Control: private');
 }
 
-function htmlheader($title, $css = '') {
+function htmlheader($title, $css) {
   $css = preg_replace('/[^a-zA-Z]/', '', $css);
   if ($css == '') $css = 'travelrun';
   $retval = '';
