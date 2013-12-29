@@ -5,9 +5,11 @@ require '.config.php';
 
 usleep(SQLDIRECT_DELAY * 1000);
 $sql = '';
+$pwd = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  if ($_POST['pwd'] == SQLDIRECT_PASSWORD) {
+  $pwd = $_POST['pwd'];
+  if ($pwd == SQLDIRECT_PASSWORD) {
     // open the database connection
     $conn = mysql_connect(SQL_HOST, SQL_USER, SQL_PASS) or die(mysql_error());
     mysql_select_db(SQL_DATA);
@@ -45,7 +47,8 @@ echo '<form method="post" action="">';
 echo 'Enter SQL below<br><textarea name="sql" rows="12" cols="78">';
 echo $sql;
 echo '</textarea><br>';
-echo 'Enter password: <input type="password" name="pwd"> <input type="submit" value="Execute">';
+echo 'Enter password: <input type="password" name="pwd" value="', $pwd, '">';
+echo ' <input type="submit" value="Execute">';
 echo '</form>';
 
 ?>
