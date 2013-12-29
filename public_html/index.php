@@ -100,7 +100,7 @@ if ($ratio < 0.0095) {
   echo number_format(100 * $ratio, 2), '%';
 }
 echo '">update the data</a>. Thank you.<br>';
-echo '<span class="info">There is also an <a href="manupdate.php">manual update feature</a> for isolated data on the flower thread.</span></h3><br>';
+echo '<span class="minor">There is also an <a href="manupdate.php">manual update feature</a> for isolated data on the flower thread.</span></h3><br>';
 echo '<br>';
 
 echo 'Choose a country: ';
