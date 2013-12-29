@@ -10,7 +10,7 @@ div.timeinfo {}
 div.updatelinks { margin-top: 2em; margin-bottom: 2em; font-size: 133%; }
 div.nav {}
 div.itemdata { margin-top: 2em; margin-bottom: 2em; }
-div.flowerchart {}
+div.flowerchart { margin-left: 4em; }
 div.footer { margin-top: 2em; }
 
 tr.default { background-color: snow; color: black; }
