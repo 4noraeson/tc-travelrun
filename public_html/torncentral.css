@@ -1,3 +1,6 @@
 body { background-color: black; color: lightsalmon; }
+a:link { background-color: black; color: orangered; }
+a:hover { background-color: black; color: orangered; }
+a:visited { background-color: black; color: orangered; }
 .minor { font-size: smaller; }
 .valuedata { text-align: right; }
