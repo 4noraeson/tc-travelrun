@@ -53,7 +53,7 @@ mysql_free_result($res);
 
 $extradata = array();
 $sql =<<<SQL_EXTRADATA
-select itemtype.itemtypename, item.itemname, stock.price, stock.quantity, itemtype.bgcolor
+select itemtype.itemtypename, item.itemname, stock.price, stock.quantity, itemtype.cssclass
 from stock, item, itemtype
 where stock.item = item.itemid
   and item.itemtype = itemtype.itemtypeid
@@ -177,7 +177,7 @@ echo 'Items in ', $cname, ' at ', $lastlocalupdate, ' GMT ';
 echo '<table border="1">';
 echo '<tr><th>Type</th><th>Item</th><th>Price</th><th>Quantity</th></tr>';
 foreach ($extradata as $extra) {
-  echo '<tr style="background-color: ', $extra[4], '; color: black;">';
+  echo '<tr class="', $extra[4], '">';
   echo '<td>&nbsp;', $extra[0], '&nbsp;</td>';
   echo '<td>&nbsp;', $extra[1], '&nbsp;</td>';
   echo '<td class="valuedata">&nbsp;$', number_format($extra[2], 0, '', ','), '&nbsp;</td>';

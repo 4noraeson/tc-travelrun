@@ -1,3 +1,10 @@
 body { background-color: snow; color: black; }
 .minor { font-size: smaller; }
 .valuedata { text-align: right; }
+
+tr.default { background-color: snow; color: black; }
+tr.drug { background-color: yellow; color: black; }
+tr.flower { background-color: lightgreen; color: black; }
+tr.plushie { background-color: pink; color: black; }
+tr.alcohol { background-color: lightcyan; color: black; }
+tr.misc { background-color: silver; color: black; }
