@@ -66,24 +66,6 @@ while ($row = mysql_fetch_row($res)) {
 }
 mysql_free_result($res);
 
-// get the data for drugs
-#$drugs = array();
-#$sql = <<<SQL_DRUGS
-#select stock.item, item.itemname, stock.country, country.countryname, stock.utctime, stock.price, stock.quantity
-#from stock, lastdrugs, item, country
-#where stock.item = lastdrugs.item
-#  and stock.item = item.itemid
-#  and stock.country = country.countryid
-#  and stock.country = lastdrugs.country
-#  and stock.utctime = lastdrugs.lastutc
-#order by item.itemname, stock.price
-#SQL_DRUGS;
-#$res = mysql_query($sql) or die(mysql_error());
-#while ($row = mysql_fetch_row($res)) {
-#  $drugs[] = array($row[0], $row[1], $row[2], $row[3], $row[4], $row[5], $row[6]);
-#}
-#mysql_free_result($res);
-
 // get update frequency
 $cvk = array();
 $upk = $viewk = 0;
