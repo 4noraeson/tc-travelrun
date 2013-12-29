@@ -86,7 +86,7 @@ mysql_free_result($res);
 mysql_close($conn);
 
 httpheader();
-echo htmlheader('travelrun');
+echo htmlheader('travelrun', $_GET['css']);
 
 echo 'Current time is ', gmdate('Y-m-d H:i:s'), ' GMT.<br>';
 echo 'Last update was made at ', $lastupdate, ' GMT for ', $lastcountry, '.<br>';
