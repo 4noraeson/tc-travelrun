@@ -2,6 +2,7 @@
 ## $Id$
 
 require '.config.php';
+require 'fx.inc.php';
 
 session_start();
 $_SESSION['timecheck'] = date('YmdHis', time() + 1);
@@ -83,6 +84,8 @@ mysql_free_result($res);
 
 // close the database connection
 mysql_close($conn);
+
+echo htmlheader('travelrun');
 
 echo 'Current time is ', gmdate('Y-m-d H:i:s'), ' GMT.<br>';
 echo 'Last update was made at ', $lastupdate, ' GMT for ', $lastcountry, '.<br>';
@@ -190,4 +193,7 @@ echo '<img src="fgraph.php?c=', $cc, '">';
 echo '<br><br>';
 echo '<i>Source code available on a <a href="http://code.google.com/p/tc-travelrun/">subversion repository</a>.</i><br>';
 echo '<i>Travelrun writen by <a href="http://www.torn.com/profiles.php?XID=1757971" target="new">ebcdic</a>. If you like this page, please consider <a href="http://www.torn.com/sendcash.php?XID=1275358" target="new">donating</a> to the cause...</i>';
+
+echo '</body>';
+echo '</html>';
 ?>
