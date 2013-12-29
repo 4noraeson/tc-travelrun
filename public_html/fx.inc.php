@@ -6,7 +6,7 @@ function httpheader() {
 
 function htmlheader($title, $css) {
   $css = preg_replace('/[^a-zA-Z]/', '', $css);
-  if ($css == '') $css = 'travelrun';
+  if (($css == '') || (!is_file($css . '.css'))) $css = 'travelrun';
   $retval = '';
   $retval .= '<!DOCTYPE html>';
   $retval .= '<html lang="en">';
