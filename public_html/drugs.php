@@ -7,7 +7,7 @@ require 'fx.inc.php';
 httpheader();
 echo htmlheader('travelrun -- drug information', $_GET['css']);
 
-echo 'Go back to the <a href="index.php">start page</a>.<br><br>';
+echo '<div class="drugnav">Go back to the <a href="index.php">start page</a>.</div>';
 
 // open the database connection
 $conn = mysql_connect(SQL_HOST, SQL_USER, SQL_PASS) or die(mysql_error());
@@ -32,13 +32,13 @@ while ($row = mysql_fetch_row($res)) {
 mysql_free_result($res);
 mysql_close($conn);
 
+echo '<div class="drugdata">';
 echo '<table border="1">';
 echo '<tr><th>Drug</th><th>Country</th><th>oldness</th><th>Quantity</th><th>Price</th></tr>';
-$bgcolors = array('#ededed', '#cbcbcb');
 $olddrug = '';
-$lastcolor = 0;
+$oddgroup = 0;
 foreach ($drugs as $d) {
-  if ($d[1] != $olddrug) $lastcolor = 1 - $lastcolor;
+  if ($d[1] != $olddrug) $oddgroup = 1 - $oddgroup;
   $olddrug = $d[1];
 
   $gmnow = gmdate('Y-m-d H:i:s');
@@ -62,15 +62,16 @@ foreach ($drugs as $d) {
     }
   }
 
-  echo '<tr style="background-color: ', $bgcolors[$lastcolor], '; color: black;">';
+  echo '<tr class="', $oddgroup ? 'odd' : 'even', 'row">';
   echo '<td>&nbsp;', $d[1], '&nbsp;</td>';
   echo '<td>&nbsp;', $d[3], '&nbsp;</td>';
-  echo '<td class="valuedata">&nbsp;', number_format($delta, 0), ' ', $deltaunits, (($delta >= 1.5) ? 's' : ''), ' ago&nbsp;</td>';
+  echo '<td class="timedata">&nbsp;', number_format($delta, 0), ' ', $deltaunits, (($delta >= 1.5) ? 's' : ''), ' ago&nbsp;</td>';
   echo '<td class="valuedata">&nbsp;', number_format($d[6], 0, '', ','), '&nbsp;</td>';
   echo '<td class="valuedata">&nbsp;$', number_format($d[5],0, '', ','), '&nbsp;</td>';
   echo '</tr>';
 }
 echo '</table>';
+echo '</div>';
 
 echo htmlfooter();
 ?>

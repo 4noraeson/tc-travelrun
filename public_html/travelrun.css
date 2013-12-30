@@ -5,6 +5,7 @@ a:hover { background-color: snow; color: red; }
 a:active { background-color: snow; color: green; }
 .minor { font-size: smaller; }
 .valuedata { text-align: right; }
+.timedata { text-align: center; }
 
 div.timeinfo {}
 div.updatelinks { margin-top: 2em; margin-bottom: 2em; font-size: 133%; }
@@ -19,3 +20,8 @@ tr.flower { background-color: lightgreen; color: black; }
 tr.plushie { background-color: pink; color: black; }
 tr.alcohol { background-color: lightcyan; color: black; }
 tr.misc { background-color: silver; color: black; }
+
+div.drugnav { margin-bottom: 2em; }
+div.drugdata {}
+div.drugdata tr.oddrow { background-color: silver; color: black; }
+div.drugdata tr.evenrow { background-color: gainsboro; color: black; }
