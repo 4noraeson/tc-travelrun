@@ -25,3 +25,10 @@ div.drugnav { margin-bottom: 2em; }
 div.drugdata {}
 div.drugdata tr.oddrow { background-color: silver; color: black; }
 div.drugdata tr.evenrow { background-color: gainsboro; color: black; }
+
+div.updatenav {}
+div.updateform {}
+
+div.mantitle {}
+div.mannav {}
+div.manform {}

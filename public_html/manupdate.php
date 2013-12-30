@@ -2,6 +2,7 @@
 ## $Id$
 
 require '.config.php';
+require 'fx.inc.php';
 
 #connect to database
 $conn = mysql_connect(SQL_HOST, SQL_USER, SQL_PASS) or die(mysql_error());
@@ -23,10 +24,18 @@ mysql_free_result($res);
 
 mysql_close($conn);
 
-echo '<h3>Manual Update</h3>';
-echo 'Return to the <a href="index.php">start page</a>.<br>';
+httpheader();
+echo htmlheader('travelrun -- manual update', $_GET['css']);
 
-echo '<br>';
+echo '<div class="mantitle">';
+echo '<h3>Manual Update</h3>';
+echo '</div>';
+
+echo '<div class="mannav">';
+echo 'Return to the <a href="index.php">start page</a>.';
+echo '</div>';
+
+echo '<div class="manform">';
 echo '<i>Data from this update is only shown in the graph.</i>';
 
 echo '<form method="post" action="manupdate2.php">';
@@ -44,4 +53,7 @@ echo '<label>Quantity in stock: <input type="text" name="qtd" size="4"></label><
 echo '<br>';
 echo '<input type="submit" value="update flower">';
 echo '</form>';
+echo '</div>';
+
+echo htmlfooter();
 ?>
