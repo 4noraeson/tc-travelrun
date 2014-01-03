@@ -1,6 +1,6 @@
 body { background-color: snow; color: black; }
 a:link { background-color: snow; color: blue; }
-a:visited { background-color: snow; color: magenta; }
+a:visited { background-color: snow; color: plum; }
 a:hover { background-color: snow; color: red; }
 a:active { background-color: snow; color: green; }
 .minor { font-size: smaller; }
