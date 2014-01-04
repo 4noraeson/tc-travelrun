@@ -32,7 +32,7 @@ function usercss() {
     if (isset($_COOKIE['css'])) {
       $retval = $_COOKIE['css'];
     } else {
-      $ipbasedname = 'IP' . base_convert(md5($_SERVER['REMOTE_ADDR']), 16, 36);
+      $ipbasedname = 'IP' . md5($_SERVER['REMOTE_ADDR']);
       if (is_file('css/' . $ipbasedname . '.css')) {
         $retval = $ipbasedname;
       }
