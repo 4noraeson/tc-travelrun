@@ -10,7 +10,7 @@ require 'fx.inc.php';
 
 #mysql_close($conn);
 httpheader();
-echo htmlheader('travelrun -- update all', $_GET['css']);
+echo htmlheader('travelrun -- update all', usercss());
 ?>
 <div class="updatenav">
 Go back to the <a href="index.php">start page</a>.

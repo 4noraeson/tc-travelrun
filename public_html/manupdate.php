@@ -25,7 +25,7 @@ mysql_free_result($res);
 mysql_close($conn);
 
 httpheader();
-echo htmlheader('travelrun -- manual update', $_GET['css']);
+echo htmlheader('travelrun -- manual update', usercss());
 
 echo '<div class="mantitle">';
 echo '<h3>Manual Update</h3>';

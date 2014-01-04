@@ -5,7 +5,7 @@ require '.config.php';
 require 'fx.inc.php';
 
 httpheader();
-echo htmlheader('travelrun -- drug information', $_GET['css']);
+echo htmlheader('travelrun -- drug information', usercss());
 
 echo '<div class="drugnav">Go back to the <a href="index.php">start page</a>.</div>';
 

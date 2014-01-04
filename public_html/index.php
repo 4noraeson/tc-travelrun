@@ -86,7 +86,7 @@ mysql_free_result($res);
 mysql_close($conn);
 
 httpheader();
-echo htmlheader('travelrun', $_GET['css']);
+echo htmlheader('travelrun', usercss());
 
 echo '<div class="timeinfo">';
 echo 'Current time is ', gmdate('Y-m-d H:i:s'), ' GMT.<br>';
