@@ -15,10 +15,7 @@ mysql_select_db(SQL_DATA);
 // save raw $_POST['data'] in the database
 $utc = gmdate('Y-m-d H:i:s');
 $pd = mysql_real_escape_string($_POST['data']);
-$s = 'web';
-if (isset($_POST['sender'])) {
-  $s = mysql_real_escape_string($_POST['sender']);
-}
+$s = $_SERVER['RENOTE_ADDR'];
 $ua = mysql_real_escape_string($_SERVER['HTTP_USER_AGENT']);
 $r = mysql_real_escape_string($_SERVER['HTTP_REFERER']);
 $sql = "insert into post (postid, postUTC, postdata, user_agent, referer, sender) values (NULL, '$utc', '$pd', '$ua', '$r', '$s')";

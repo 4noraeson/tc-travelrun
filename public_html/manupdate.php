@@ -39,7 +39,6 @@ echo '<div class="manform">';
 echo '<i>Data from this update is only shown in the graph.</i>';
 
 echo '<form method="post" action="manupdate2.php">';
-echo '<input type="hidden" name="sender" value="web">';
 echo 'You can copy all of the date/time forum line or part of it as long as it includes the highlighted underscored portion: [Posted on Sun <b><u>Sep 29, 2013 15:23</u></b>:55]<br>';
 echo '<label>Time: <input type="text" name="time" size="24" title="Copy/Paste the time from the flower thread"></label>';
 echo ' ';

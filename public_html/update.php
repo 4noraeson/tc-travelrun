@@ -18,7 +18,6 @@ Go back to the <a href="index.php">start page</a>.
 
 <div class="updateform">
 <form method="post" action="update2.php">
-  <input type="hidden" name="sender" value="web">
   Copy all of the torn country item page <i>(<b>Ctrl+A</b>, <b>Ctrl+C</b> probably works)</i><br>
   paste in the text box below <i>(<b>Ctrl+V</b> perhaps)</i> 
   <!--font size="-2">(if you're paranoid, you can edit the amount you have to,
