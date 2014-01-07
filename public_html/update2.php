@@ -6,6 +6,7 @@ require '.config.php';
 if ($_SERVER['REQUEST_METHOD'] != 'POST') die('No!');
 
 $cch = 'm';
+$prize = false;
 
 // open the database connection
 $conn = mysql_connect(SQL_HOST, SQL_USER, SQL_PASS) or die(mysql_error());
@@ -66,6 +67,9 @@ if ($n == 1) {
       $sql5 = "insert into stock (stockid, utctime, country, item, price, quantity, manual) values (NULL, utc_timestamp(), $cid, $fid, 0, 0, 0)";
       mysql_query($sql5) or die(mysql_error());
     }
+    if (mt_rand(0, 999999) < PRIZE_PER_MILLION) {
+      $prize = true;
+    }
   }
 
   // update count
@@ -77,6 +81,26 @@ if ($n == 1) {
   foreach ($files as $file) {
     if (is_file($file)) unlink($file);
   }
+}
+
+if ($prize) {
+  $prizedate = gmdate('Y-m-d H:i:s');
+  $prizecode = md5(PRIZE_PREFIX . $prizedate);
+  $sql = "insert into prize (pdate, pcode, puser) values ('$prizedate', '$prizecode', 0)";
+  mysql_query($sql) or die(mysql_error());
+  mysql_close($conn);
+  echo '<div class="prize">';
+  echo '<h1>Congratulations!</h1>';
+  echo '<h2>You have won a prize.</h2>';
+  echo '<h3>send a in-game message to <a href="http://www.torn.com/profiles.php?XID=1757971">ebcdic</a> to reclaim it.</h3>';
+  echo '<h3>include the prize date and code in the message</h3>';
+  echo '<h3 style="text-align: center;"><pre>';
+  echo 'date: ', $prizedate;
+  echo 'code: ', $prizecode;
+  echo '</pre></h3>';
+  echo '<br><br>';
+  echo 'Back to <a href="index.php?c=', $cch, '">the regular travelrun page</a>.';
+  exit('</div>');
 }
 
 // close the database connection

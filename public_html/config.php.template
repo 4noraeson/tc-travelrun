@@ -10,6 +10,9 @@ define('SQL_USER', '');
 define('SQL_PASS', '');
 define('SQL_DATA', '');
 
-define('SQLDIRECT_DELAY', ''); // Delay in milliseconds for sqldirect.php
+define('SQLDIRECT_DELAY', '500'); // Delay in milliseconds for sqldirect.php
 define('SQLDIRECT_PASSWORD', ''); // Password for access to the database through sqldirect.php
+
+define('PRIZE_PER_MILLION', '0'); // Percentage of wins
+define('PRIZE_PREFIX', ''); // Prefix to add to datetime and garble md5 result
 ?>
