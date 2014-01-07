@@ -34,7 +34,7 @@ foreach ($prizes as $p) {
   echo '<td align="center">';
         echo $p[1] ? $p[1] : '--';
         echo '</td>';
-  echo '<td>', (trim($p[2]) != '') ? $p[2] : '&nbsp;', '</td>;
+  echo '<td>', (trim($p[2]) != '') ? $p[2] : '&nbsp;', '</td>';
   echo '</tr>';
 }
 echo '</table>';
