@@ -9,10 +9,10 @@ $conn = mysql_connect(SQL_HOST, SQL_USER, SQL_PASS) or die(mysql_error());
 mysql_select_db(SQL_DATA);
 
 $prizes = array();
-$sql = "select pdate, puser from prize order by pdate desc limit 10";
+$sql = "select pdate, puser, pnote from prize order by pdate desc limit 10";
 $res = mysql_query($sql) or die(mysql_error());
 while ($row = mysql_fetch_row($res)) {
-  $prizes[] = array($row[0], $row[1]);
+  $prizes[] = array($row[0], $row[1], $row[2]);
 }
 mysql_free_result($res);
 
@@ -27,13 +27,14 @@ echo '<div class="prizemain">';
 
 echo 'Recent prizes:<br>';
 echo '<table border="1">';
-echo '<tr><th>date</th><th>claimed</th></tr>';
+echo '<tr><th>date</th><th>claimed</th><th>note</th></tr>';
 foreach ($prizes as $p) {
   echo '<tr>';
   echo '<td>', $p[0], '</td>';
   echo '<td align="center">';
         echo $p[1] ? $p[1] : '--';
         echo '</td>';
+  echo '<td>', (trim($p[2]) != '') ? $p[2] : '&nbsp;', '</td>;
   echo '</tr>';
 }
 echo '</table>';
