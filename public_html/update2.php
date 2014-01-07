@@ -65,7 +65,12 @@ if ($n == 1) {
       mysql_query($sql5) or die(mysql_error());
     }
     if (mt_rand(0, 999999) < PRIZE_PER_MILLION) {
-      $prize = true;
+      $mindate = gmdate('Y-m-d H:i:s', time() - 25*60);
+      $sqlprize = "select count(*) from post where sender='$s' and postUTC > '$mindate'";
+      $resprize = mysql_query($sqlprize) or die(mysql_error());
+      $recent = mysql_result($resprize, 0, 0);
+      mysql_free_result($resprize);
+      if (!$recent) $prize = true;
     }
   }
 

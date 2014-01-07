@@ -20,9 +20,8 @@ if ($flower && isset($country[$flower]) && (trim($_POST['gmt']) != '') && (trim(
     $unixtime = date('Y-m-d H:i:s', $flowertime - 60*60*$gmtoffset);
     $quantity = 1 * $_POST['qtd'];
     $sender = $_SERVER['REMOTE_ADDR'];
-    $safesender = mysql_real_escape_string($sender);
 
-    $sql = "insert into stock (utctime, country, item, price, quantity, manual, sender) values ('$unixtime', $country[$flower], $flower, 0, $quantity, 1, '$safesender')";
+    $sql = "insert into stock (utctime, country, item, price, quantity, manual, sender) values ('$unixtime', $country[$flower], $flower, 0, $quantity, 1, '$sender')";
     mysql_query($sql) or die(mysql_error());
 
     // close the database connection
