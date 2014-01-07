@@ -60,7 +60,7 @@ if ($n == 1) {
         }
       }
     }
-    if ($gotflower == 0) {
+    if (!$gotflower) {
       $sql5 = "insert into stock (stockid, utctime, country, item, price, quantity, manual) values (NULL, utc_timestamp(), $cid, $fid, 0, 0, 0)";
       mysql_query($sql5) or die(mysql_error());
     }
@@ -97,7 +97,7 @@ if ($prize) {
   echo '<h3>send a in-game message to <a href="http://www.torn.com/profiles.php?XID=1757971">ebcdic</a> to reclaim it.</h3>';
   echo '<h3>include the prize date and code in the message</h3>';
   echo '<h3 style="text-align: center;"><pre>';
-  echo 'date: ', $prizedate;
+  echo 'date: ', $prizedate, "\n";
   echo 'code: ', $prizecode;
   echo '</pre></h3>';
   echo '<br><br>';
