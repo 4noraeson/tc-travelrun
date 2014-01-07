@@ -25,13 +25,15 @@ echo '</div>';
 
 echo '<div class="prizemain">';
 
-echo 'Recent claimed prizes:<br>';
+echo 'Recent prizes:<br>';
 echo '<table border="1">';
-echo '<tr><th>date</th><th>user</th></tr>';
+echo '<tr><th>date</th><th>claimed</th></tr>';
 foreach ($prizes as $p) {
   echo '<tr>';
   echo '<td>', $p[0], '</td>';
-  echo '<td align="right">', $p[1], '</td>';
+  echo '<td align="center">';
+        echo $p[1] ? $p[1] : '--';
+        echo '</td>';
   echo '</tr>';
 }
 echo '</table>';
