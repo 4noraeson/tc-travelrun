@@ -103,7 +103,7 @@ if ($prize) {
   echo 'date: ', $prizedate, "\n";
   echo 'code: ', $prizecode;
   echo '</pre></h3>';
-  echo '<br><i>Prizes are in testing phase: they'll be small prizes :)</i>';
+  echo '<br><i>Prizes are in testing phase: they\'ll be small prizes :)</i>';
   echo '<br><br>';
   echo 'Back to <a href="index.php?c=', $cch, '">the regular travelrun page</a>.';
   echo '</div>';
