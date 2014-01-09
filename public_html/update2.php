@@ -2,11 +2,12 @@
 ## $Id$
 
 require '.config.php';
+require 'fx.inc.php';
 
 if ($_SERVER['REQUEST_METHOD'] != 'POST') die('No!');
 
 $cch = 'm';
-$prize = false;
+$prize = 0;
 
 // open the database connection
 $conn = mysql_connect(SQL_HOST, SQL_USER, SQL_PASS) or die(mysql_error());
@@ -65,14 +66,12 @@ if ($n == 1) {
       mysql_query($sql5) or die(mysql_error());
     }
     if (mt_rand(0, 999999) < PRIZE_PER_MILLION) {
-      if ($s == '2.83.67.111') { // ebcdic's IP address
       $mindate = gmdate('Y-m-d H:i:s', time() - 25*60);
       $sqlprize = "select count(*) from post where sender='$s' and postUTC > '$mindate'";
       $resprize = mysql_query($sqlprize) or die(mysql_error());
       $recent = mysql_result($resprize, 0, 0);
       mysql_free_result($resprize);
-      if (!$recent) $prize = true;
-      }
+      if (!$recent) $prize = 1;
     }
   }
 
@@ -93,6 +92,8 @@ if ($prize) {
   $sql = "insert into prize (pdate, pcode, puser) values ('$prizedate', '$prizecode', 0)";
   mysql_query($sql) or die(mysql_error());
   mysql_close($conn);
+  httpheader();
+  echo htmlheader('travelrun -- prize', usercss());
   echo '<div class="prize">';
   echo '<h1>Congratulations!</h1>';
   echo '<h2>You have won a prize.</h2>';
@@ -102,9 +103,12 @@ if ($prize) {
   echo 'date: ', $prizedate, "\n";
   echo 'code: ', $prizecode;
   echo '</pre></h3>';
+  echo '<br><i>Prizes are in testing phase: they'll be small prizes :)</i>';
   echo '<br><br>';
   echo 'Back to <a href="index.php?c=', $cch, '">the regular travelrun page</a>.';
-  exit('</div>');
+  echo '</div>';
+  echo htmlfooter();
+  exit(0);
 }
 
 // close the database connection
