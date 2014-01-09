@@ -89,7 +89,7 @@ if ($n == 1) {
 if ($prize) {
   $prizedate = gmdate('Y-m-d H:i:s');
   $prizecode = md5(PRIZE_PREFIX . $prizedate);
-  $sql = "insert into prize (pdate, pcode, puser) values ('$prizedate', '$prizecode', 0)";
+  $sql = "insert into prize (pdate, pcode, puser, pcountry) values ('$prizedate', '$prizecode', 0, '$safe_country')";
   mysql_query($sql) or die(mysql_error());
   mysql_close($conn);
   httpheader();

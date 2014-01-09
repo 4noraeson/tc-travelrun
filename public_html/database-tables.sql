@@ -796,6 +796,7 @@ CREATE TABLE prize (
   pcode varchar(32) COLLATE latin1_general_ci NOT NULL,
   pnote varchar(255) COLLATE latin1_general_ci NOT NULL,
   puser int(11) NOT NULL,
+  pcountry varchar(32) COLLATE latin1_gengeral_ci NOT NULL,
   PRIMARY KEY (prizeid)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci ;
 
