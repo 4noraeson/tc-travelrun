@@ -30,7 +30,7 @@ $dat = mysql_result($res, 0, 1);
 mysql_free_result($res);
 // close the database connection
 mysql_close($conn);
-echo 'data is <pre>', $dat, '</pre><br>~~~~~~~~<br>';
+echo 'data from ', $utc, ' is <pre>', $dat, '</pre><br>~~~~~~~~<br>';
 
 // process $dat and display info
 $n = preg_match('/are in ([A-Z a-z]+) and have/', $dat, $matches);
