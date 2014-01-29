@@ -15,9 +15,10 @@ mysql_select_db(SQL_DATA);
 if ($pid == 0) {
   $sql = "select min(postid), max(postid) from post";
   $res = mysql_query($sql) or die(mysql_error());
-  $middle = round((mysql_result($res, 0, 0) + mysql_result($res, 0, 1)) / 2);
+  $little = mysql_result($res, 0, 0);
+  $big = mysql_result($res, 0, 1);
   mysql_free_result($res);
-  echo 'use p at approx ', $middle;
+  echo 'use p between ', $little, ' and ', $big;
   exit(0);
 }
 
