@@ -155,6 +155,17 @@ echo '<br>';
 echo 'or look at the <a href="drugs.php">most recent drug information</a> across all countries.';
 echo '</div>';
 
+if (isset($_SESSION['recent_update'])) {
+  unset($_SESSION['recent_update']);
+  echo '<div class="pub">';
+  echo 'If you want to make a post in the flower thread and advertize travelrun, ';
+  echo 'you can use the following code:<br>';
+  echo '<pre style="margin:1em;padding:4px;background-color:#dadada">';
+    echo '[u][url=http://travelrun.torncentral.com/index.php]travelrun[/url][/u] updated';
+    echo '</pre>';
+  echo '</div>';
+}
+
 echo '<div class="itemdata">';
 $gmnow = gmdate('Y-m-d H:i:s');
 $unixlast = strtotime($lastlocalupdate);

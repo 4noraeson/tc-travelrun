@@ -3,6 +3,7 @@
 
 require '.config.php';
 require 'fx.inc.php';
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] != 'POST') die('No!');
 
@@ -38,6 +39,7 @@ if ($n == 1) {
   }
   mysql_free_result($res2);
   if ($cid != 0) {
+    $_SESSION['recent_update'] = 1;
     $gotflower = 0;
     $items = array();
     $sql_items = "select itemname, itemid from item";
