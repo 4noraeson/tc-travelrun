@@ -157,9 +157,9 @@ echo '</div>';
 
 if (isset($_SESSION['recent_update'])) {
   unset($_SESSION['recent_update']);
-  echo '<div class="pub">';
-  echo 'If you want to make a post in the flower thread and advertize travelrun, ';
-  echo 'you can use the following code:<br>';
+  echo '<div class="pub"><br><i>';
+  echo 'If you want to make a post in the flower thread and advertise travelrun, ';
+  echo 'you can use the following code:</i><br>';
   echo '<pre style="margin:1em;padding:4px;background-color:#dadada">';
     echo '[u][url=http://travelrun.torncentral.com/index.php]travelrun[/url][/u] updated';
     echo '</pre>';
