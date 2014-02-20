@@ -29,17 +29,20 @@ if ($n == 1) {
   $country = $matches[1];
   $safe_country = mysql_real_escape_string($country);
 
-  $sql2 = "select countryid, flower, letter from country where countryname = '$safe_country'";
+  $sql2 = "select countryid, flower, letter, itemname from country, item where country.flower = item.itemid and countryname = '$safe_country'";
   $res2 = mysql_query($sql2) or die(mysql_error());
   $cid = $fid = 0;
   if (mysql_num_rows($res2) == 1) {
     $cid = mysql_result($res2, 0, 0);
     $fid = mysql_result($res2, 0, 1);
     $cch = mysql_result($res2, 0, 2);
+    $fin = mysql_result($res2, 0, 3);
   }
   mysql_free_result($res2);
   if ($cid != 0) {
-    $_SESSION['recent_update'] = 1;
+    $_SESSION['recent_update'] = array();
+    $_SESSION['recent_update']['country'] = $country;
+    $_SESSION['recent_update']['flower'] = $fin;
     $gotflower = 0;
     $items = array();
     $sql_items = "select itemname, itemid from item";
@@ -59,11 +62,15 @@ if ($n == 1) {
         if ($itemid != 0) {
           $sql4 = "insert into stock (stockid, utctime, country, item, price, quantity, manual, sender) values (NULL, utc_timestamp(), $cid, $itemid, $itemcost, $itemleft, 0, '$s')";
           mysql_query($sql4) or die(mysql_error());
-          if ($itemid == $fid) $gotflower = 1;
+          if ($itemid == $fid) {
+            $gotflower = 1;
+            $_SESSION['recent_update']['qtd'] = $itemleft;
+          }
         }
       }
     }
     if (!$gotflower) {
+      $_SESSION['recent_update']['qtd'] = 0;
       $sql5 = "insert into stock (stockid, utctime, country, item, price, quantity, manual, sender) values (NULL, utc_timestamp(), $cid, $fid, 0, 0, 0, '$s')";
       mysql_query($sql5) or die(mysql_error());
     }

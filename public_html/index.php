@@ -156,14 +156,17 @@ echo 'or look at the <a href="drugs.php">most recent drug information</a> across
 echo '</div>';
 
 if (isset($_SESSION['recent_update'])) {
-  unset($_SESSION['recent_update']);
   echo '<div class="pub"><br><i>';
-  echo 'If you want to make a post in the flower thread and advertise travelrun, ';
-  echo 'you can use the following code:</i><br>';
+  echo 'If you want to make a post in the flower thread and advertise ';
+  echo 'travelrun, you can use the following code:</i><br>';
   echo '<pre style="margin:1em;padding:4px;background-color:#dadada">';
-    echo '[u][url=http://travelrun.torncentral.com/index.php]travelrun[/url][/u] updated';
+    echo "{$_SESSION['recent_update']['qtd']} ";
+    echo "{$_SESSION['recent_update']['flower']} in ";
+    echo "{$_SESSION['recent_update']['country']}\n\n";
+    echo '[u][url=http://travelrun.torncentral.com/]travelrun[/url][/u] updated';
     echo '</pre>';
   echo '</div>';
+  unset($_SESSION['recent_update']);
 }
 
 echo '<div class="itemdata">';
