@@ -109,7 +109,7 @@ if (!is_file($filename)) {
     $realx = $daytime / 1440 * 531 + 30;
     $realy = (10000 - $row[2]) / 10000 * 420 + 40;
 
-    $delta = time() - strtotime($row[0]);
+    $delta = time() - strtotime($row[0] . ' UTC');
          if ($delta >= 4*DAYS) imagesetpixel($im, $realx, $realy, $black);
     else if ($delta >= 3*DAYS) imagefilledarc($im, $realx, $realy, 3, 3, 0, 360, $black, IMG_ARC_PIE);
     else if ($delta >= 2*DAYS) imagefilledarc($im, $realx, $realy, 5, 5, 0, 360, $green, IMG_ARC_PIE);
