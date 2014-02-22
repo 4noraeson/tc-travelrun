@@ -1,6 +1,8 @@
 <?php
 ## $Id$
 
+define('DAYS', 86400); /* seconds in a day */
+
 require '.config.php';
 session_start();
 
@@ -38,6 +40,7 @@ if (!is_file($filename)) {
   # prepare colours
   $black = imagecolorallocate($im, 0, 0, 0);
   $blue = imagecolorallocate($im, 0, 0, 255);
+  $green = imagecolorallocate($im, 0, 255, 0);
   $lightgreen = imagecolorallocate($im, 153, 255, 153);
   $red = imagecolorallocate($im, 255, 0, 0);
   $gray = imagecolorallocate($im, 127, 127, 127);
@@ -58,13 +61,17 @@ if (!is_file($filename)) {
   centeredtext($im, $subtitle, 2, 0, 18, 639, 30, $black, $white, $white);
 
   #legend
-  centeredtext($im, ' ', 1, 570, 199, 638, 249, $black, $white, $black);
-  centeredtext($im, ' last month', 1, 571, 200, 637, 216, $black, $white, $white);
-  imagesetpixel($im, 576, 208, $black);
-  centeredtext($im, ' last week ', 1, 571, 216, 637, 232, $black, $white, $white);
-  imagefilledarc($im, 576, 224, 3, 3, 0, 360, $blue, IMG_ARC_PIE);
-  centeredtext($im, ' last day  ', 1, 571, 232, 637, 248, $black, $white, $white);
-  imagefilledarc($im, 576, 240, 7, 7, 0, 360, $red, IMG_ARC_PIE);
+  centeredtext($im, ' ', 1, 570, 183, 638, 265, $black, $white, $black);
+  centeredtext($im, ' 1 day     ', 1, 571, 184, 637, 200, $black, $white, $white);
+  imagefilledarc($im, 576, 192, 9, 9, 0, 360, $red, IMG_ARC_PIE);
+  centeredtext($im, ' 2 days    ', 1, 571, 200, 637, 216, $black, $white, $white);
+  imagefilledarc($im, 576, 208, 7, 7, 0, 360, $blue, IMG_ARC_PIE);
+  centeredtext($im, ' 3 days    ', 1, 571, 216, 637, 232, $black, $white, $white);
+  imagefilledarc($im, 576, 224, 5, 5, 0, 360, $green, IMG_ARC_PIE);
+  centeredtext($im, ' 4 days    ', 1, 571, 232, 637, 248, $black, $white, $white);
+  imagefilledarc($im, 576, 240, 3, 3, 0, 360, $black, IMG_ARC_PIE);
+  centeredtext($im, ' 5+ days   ', 1, 571, 248, 637, 264, $black, $white, $white);
+  imagesetpixel($im, 576, 256, $black);
 
   #axis and grid
   centeredtext($im, 'GMT time', 2, 30, 469, 561, 479, $black, $white, $white);
@@ -101,15 +108,13 @@ if (!is_file($filename)) {
     $daytime = $hour * 60 + $minute;
     $realx = $daytime / 1440 * 531 + 30;
     $realy = (10000 - $row[2]) / 10000 * 420 + 40;
-    if ($row[0] < gmdate('Y-m-d H:i:s', strtotime('-1 week'))) {
-      imagesetpixel($im, $realx, $realy, $black);
-    } else {
-      if ($row[0] < gmdate('Y-m-d H:i:s', strtotime('-1 day'))) {
-        imagefilledarc($im, $realx, $realy, 3, 3, 0, 360, $blue, IMG_ARC_PIE);
-      } else {
-        imagefilledarc($im, $realx, $realy, 7, 7, 0, 360, $red, IMG_ARC_PIE);
-      }
-    }
+
+    $delta = time() - strtotime($row[0]);
+         if ($delta >= 4*DAYS) imagesetpixel($im, $realx, $realy, $black);
+    else if ($delta >= 3*DAYS) imagefilledarc($im, $realx, $realy, 3, 3, 0, 360, $black, IMG_ARC_PIE);
+    else if ($delta >= 2*DAYS) imagefilledarc($im, $realx, $realy, 5, 5, 0, 360, $green, IMG_ARC_PIE);
+    else if ($delta >= 1*DAYS) imagefilledarc($im, $realx, $realy, 7, 7, 0, 360, $blue, IMG_ARC_PIE);
+    else                       imagefilledarc($im, $realx, $realy, 9, 9, 0, 360, $red, IMG_ARC_PIE);
   }
 
   #free resources
