@@ -832,3 +832,5 @@ create table config (
   valtext varchar(500),
   PRIMARY KEY (configkey)
 );
+
+INSERT INTO config (configkey, valint) VALUES ('LAST_FLOWER_PAGE', 1430);
