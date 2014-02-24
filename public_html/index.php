@@ -167,8 +167,7 @@ echo '</div>';
 if (isset($_SESSION['recent_update'])) {
   echo '<div class="pub"><br><i>';
   echo 'If you want to make a post in the ';
-    echo '<a href="http://www.torn.com/forums.php?forumID=10&ID=14303015">';
-    echo 'flower thread</a> and advertise travelrun, you can use the ';
+    echo 'flower thread and advertise travelrun, you can use the ';
     echo 'following code:</i><br>';
   echo '<pre style="margin:1em;padding:4px;background-color:#dadada">';
     echo "{$_SESSION['recent_update']['qtd']} ";
