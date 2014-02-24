@@ -820,3 +820,15 @@ CREATE TABLE stock (
   KEY item (item)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=51013 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'config'
+--
+
+create table config (
+  configkey char(16) NOT NULL,
+  valint int,
+  valtext varchar(500),
+  PRIMARY KEY (configkey)
+);

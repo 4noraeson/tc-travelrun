@@ -82,6 +82,12 @@ while ($row = mysql_fetch_row($res)) {
 }
 mysql_free_result($res);
 
+// get first post of last page of flower thread
+$sql = "select valint from config where configkey = 'LAST_FLOWER_PAGE'";
+$res = mysql_query($sql) or die(mysql_error());
+$lastflower = 30 * (mysql_result($res, 0, 0) - 1);
+mysql_free_result($res);
+
 // close the database connection
 mysql_close($conn);
 
@@ -102,7 +108,10 @@ if ($ratio < 0.0095) {
   echo number_format(100 * $ratio, 2), '%';
 }
 echo '">update the data</a>. Thank you.<br>';
-echo '<span class="minor">There is also an <a href="manupdate.php">manual update feature</a> for isolated data on the flower thread.</span>';
+echo '<span class="minor">There is also an <a href="manupdate.php">manual ';
+echo 'update feature</a> for isolated data on the ';
+echo '<a href="http://www.torn.com/forums.php?forumID=10&ID=14303015&start=', $lastflower, '">';
+echo 'flower thread</a> (<i><a href="firstoflast.php">update</a></i>).</span>';
 echo '</div>';
 
 echo '<div class="nav">';
