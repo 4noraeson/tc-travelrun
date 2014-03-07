@@ -4,6 +4,8 @@
 require '.config.php';
 require 'fx.inc.php';
 
+ob_start('ob_tidyhandler');
+
 httpheader();
 echo htmlheader('travelrun -- drug information', usercss());
 
