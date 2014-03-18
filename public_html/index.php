@@ -170,7 +170,7 @@ if (isset($_SESSION['recent_update'])) {
   echo '<div class="pub"><br><i>';
   echo 'If you want to <a href="http://www.torn.com/quote.php?';
     echo 'forumID=10&ID=14303015&factionID=0&companyID=0&worldwar=0';
-    echo '&reply=1&start=43830">make a post in the ';
+    echo '&reply=1&start=', $lastflower, '">make a post in the ';
     echo 'flower thread and advertise travelrun</a>, you can use the ';
     echo 'following code:</i><br>';
   echo '<pre style="margin:1em;padding:4px;background-color:#dadada">';
