@@ -28,6 +28,8 @@ echo '<form method="post" action="firstoflast2.php">';
 echo '<label>Last page in the flower thread: <input type="text" value="', $last1st, '" name="last1st"></label>';
 echo '<input type="submit" value="UPDATE"><br>';
 echo '</form>';
+echo '<br>For the example below, you\'d use 860 for the last page.<br>';
+echo '<img src="860.jpg" alt="page navigation on torn">';
 echo '</div>';
 
 echo htmlfooter();
