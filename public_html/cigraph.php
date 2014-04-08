@@ -69,8 +69,8 @@ if (!is_file($filename)) {
   $itemtype = mysql_result($res, 0, 0);
   $itemname = mysql_result($res, 0, 1);
   mysql_free_result($res);
-  $title = "$itemname ($itemtype) [$itemid]";
-  $subtitle = "$countryname [$ccode]";
+  $title = "$itemname ($itemtype)";
+  $subtitle = $countryname;
   centeredtext($im, $title, 3, 0, 0, 639, 18, $black, $white, $white);
   centeredtext($im, $subtitle, 2, 0, 18, 639, 30, $black, $white, $white);
 
