@@ -28,6 +28,10 @@ mysql_select_db(SQL_DATA);
 httpheader();
 echo htmlheader('travelrun', usercss());
 
+echo '<div class="mannav">';
+echo 'Return to the <a href="index.php">start page</a>.';
+echo '</div>';
+
 echo '<div>';
 echo '<form>';
 
