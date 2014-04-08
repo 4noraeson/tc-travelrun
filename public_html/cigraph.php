@@ -32,7 +32,7 @@ if (isset($_GET['scale'])) $scale = 1 * $_GET['scale'];
 if ($scale < 1) die('invalid scale');
 if ($scale > 1000) die('invalid scale');
 
-if (!is_file($filename)) {
+//if (!is_file($filename)) {
   # delete files starting with '-' $ccode $itemid
   $files = glob('images/-' . $ccode . $itemid . '*');
   foreach ($files as $file) {
@@ -140,7 +140,7 @@ if (!is_file($filename)) {
 
   #close database connection
   mysql_close($conn);
-}
+//}
 
 header('Content-Type: image/png');
 readfile($filename);
