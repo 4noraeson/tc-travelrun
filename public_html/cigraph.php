@@ -1,5 +1,5 @@
 <?php
-## $Id$
+## $Id: $
 
 define('DAYS', 86400); /* seconds in a day */
 
@@ -23,18 +23,18 @@ $itemid = isset($_GET['it']) ? (1 * $_GET['it']) : 0;
 if ($itemid < 1) die($itemid . ' is invalid parameter');
 if ($itemid > 695) die($itemid . ' is invalid parameter');
 
-$ccode = isset($_GET['c']) ? $_GET['c'] : '*';
-if (!in_array($ccode, array('m', 'i', 'c', 'h', 'u', 'a', 's', 'j', 'x', 'e', 'z'))) die($ccode . ' is invalid parameter');
-$filename = 'images/-' . $ccode . $itemid . gmdate('YmdH') . substr(gmdate('i'), 0, 1) . '0.png';
-
 $scale = 1;
 if (isset($_GET['scale'])) $scale = 1 * $_GET['scale'];
 if ($scale < 1) die('invalid scale');
 if ($scale > 1000) die('invalid scale');
 
-//if (!is_file($filename)) {
-  # delete files starting with '-' $ccode $itemid
-  $files = glob('images/-' . $ccode . $itemid . '*');
+$ccode = isset($_GET['c']) ? $_GET['c'] : '*';
+if (!in_array($ccode, array('m', 'i', 'c', 'h', 'u', 'a', 's', 'j', 'x', 'e', 'z'))) die($ccode . ' is invalid parameter');
+$filename = 'images/-' . $scale . $ccode . $itemid . gmdate('YmdH') . substr(gmdate('i'), 0, 1) . '0.png';
+
+if (!is_file($filename)) {
+  # delete files starting with '-' $scale $ccode $itemid
+  $files = glob('images/-' . $scale . $ccode . $itemid . '*');
   foreach ($files as $file) {
     if (is_file($file)) unlink($file);
   }
@@ -140,7 +140,7 @@ if ($scale > 1000) die('invalid scale');
 
   #close database connection
   mysql_close($conn);
-//}
+}
 
 header('Content-Type: image/png');
 readfile($filename);

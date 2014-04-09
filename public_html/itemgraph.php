@@ -1,5 +1,5 @@
 <?php
-## $Id$
+## $Id: $
 
 require '.config.php';
 require 'fx.inc.php';
