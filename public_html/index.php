@@ -163,7 +163,7 @@ echo '<a href="index.php?c=z" title="', $cvk['z'], ' views">South Africa</a>';
 if ($cc == 'z') echo '</b>';
 
 echo '<br>';
-echo 'or view graph for <a href="itemgraph.php">specific items in a country</a> (eg <a href="itemgraph.php?c=a&item=255&scale=100">flamethrowers in Argentina scaled up 100 times</a>);';
+echo 'or view graph for <a href="itemgraph.php">specific items in a country</a> (eg <a href="itemgraph.php?c=a&it=255&scale=100">flamethrowers in Argentina scaled up 100 times</a>);';
 
 echo '<br>';
 echo 'or look at the <a href="drugs.php">most recent drug information</a> across all countries.';
