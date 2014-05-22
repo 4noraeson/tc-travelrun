@@ -166,7 +166,7 @@ echo '<br>';
 echo 'or view graph for <a href="itemgraph.php">specific items in a country</a> (eg <a href="itemgraph.php?c=a&it=255&scale=100">flamethrowers in Argentina scaled up 100 times</a>);';
 
 echo '<br>';
-echo 'or look at the <a href="drugs.php">most recent drug information</a> across all countries.';
+echo 'or look at the <a href="drugs.php">most recent drug information</a> or <a href="http://travelrun.torncentral.com/itemall.php">most recent all items info</a> across all countries.';
 echo '</div>';
 
 if (isset($_SESSION['recent_update'])) {
