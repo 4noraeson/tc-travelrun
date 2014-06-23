@@ -175,12 +175,12 @@ if (isset($_SESSION['recent_update'])) {
     echo 'forumID=10&ID=14303015&factionID=0&companyID=0&worldwar=0';
     echo '&reply=1&start=', $lastflower, '">make a post in the ';
     echo 'flower thread and advertise travelrun</a>, you can use the ';
-    echo 'following code:</i><br>';
-  echo '<pre style="margin:1em;padding:4px">';
+    echo 'code between square brackets:</i><br>';
+  echo '<pre style="margin:1em;padding:4px;background-color:#cecece">[';
     echo "{$_SESSION['recent_update']['qtd']} ";
     echo "{$_SESSION['recent_update']['flower']} in ";
-    echo "{$_SESSION['recent_update']['country']}\n\n";
-    echo 'travelrun ( http://travelrun.torncentral.com/ ) updated';
+    echo "{$_SESSION['recent_update']['country']}<br>";
+    echo '<a href="http://travelrun.torncentral.com/">travelrun</a> updated.';
     echo '</pre>';
   echo '</div>';
   unset($_SESSION['recent_update']);
