@@ -23,49 +23,6 @@ $r = mysql_real_escape_string($_SERVER['HTTP_REFERER']);
 $sql = "insert into post (postid, postUTC, postdata, user_agent, referer, sender) values (NULL, '$utc', '$pd', '$ua', '$r', '$s')";
 mysql_query($sql) or die(mysql_error());
 
-/*
-post as of 2014-06-23 (after RESPO)
-	
-TORN
-
-    News
-    Forums
-    Contact
-    Help
-
-    Name
-
-Cayman Islands
-Logout People Events Offshore Banking Market Travel Home
-You are in Cayman Islands and have $8,175,020. You have purchased 23 / 23 items so far.
-Item
-Type
-Name
-Cost
-Stock
-Circulation
-Amount
-Buy
-
-    Plushie Stingray Plushie $400 465 133,628 Buy
-    Other Nodding Turtle $750 79 98,496 Buy
-    Other Steel Drum $1,500 25 22,456 Buy
-    Flower Banana Orchid $4,000 5,525 1,030,521 Buy
-    Other Diving Gloves $5,000 49 23,402 Buy
-    Defensive Speedo $6,000 14 12,088 Buy
-    Defensive Bikini $8,000 25 33,417 Buy
-    Other Flippers $10,000 44 7,089 Buy
-    Other Snorkel $20,000 11 8,663 Buy
-    Defensive Wetsuit $30,000 47 4,298 Buy
-    Secondary Harpoon $300,000 92 3,840 Buy
-    Primary Tavor TAR-21 $495,000 87 5,547 Buy
-    Melee Naval Cutlass Sword $50,000,000 3 704 Buy
-
-
-
-Faction
-*/
-
 // process $_POST['data'] and save info to the database
 $n = preg_match('/are in ([A-Z a-z]+) and have/', $_POST['data'], $matches);
 if ($n == 1) {
@@ -96,7 +53,6 @@ if ($n == 1) {
     mysql_free_result($res_items);
 
 #   if (preg_match_all('@\s*([0-9A-Z &a-z-]+)\s+\$([0-9,]+)\s+([0-9,]+) in stock\s+Buy@', $_POST['data'], $matches, PREG_SET_ORDER)) {
-#   Flower Banana Orchid $4,000 5,525 1,030,521 Buy
     if (preg_match_all('@\s*[a-zA-Z]*\s+([0-9A-Z &a-z-]+)\s+\$([0-9,]+)\s+([0-9,]+)\s+[0-9,]+\s+Buy@', $_POST['data'], $matches, PREG_SET_ORDER)) {
       foreach ($matches as $info) {
         $itemname = trim($info[1]);

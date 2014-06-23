@@ -176,11 +176,11 @@ if (isset($_SESSION['recent_update'])) {
     echo '&reply=1&start=', $lastflower, '">make a post in the ';
     echo 'flower thread and advertise travelrun</a>, you can use the ';
     echo 'following code:</i><br>';
-  echo '<pre style="margin:1em;padding:4px;background-color:#dadada">';
+  echo '<pre style="margin:1em;padding:4px">';
     echo "{$_SESSION['recent_update']['qtd']} ";
     echo "{$_SESSION['recent_update']['flower']} in ";
     echo "{$_SESSION['recent_update']['country']}\n\n";
-    echo '[u][url=http://travelrun.torncentral.com/]travelrun[/url][/u] updated';
+    echo 'travelrun ( http://travelrun.torncentral.com/ ) updated';
     echo '</pre>';
   echo '</div>';
   unset($_SESSION['recent_update']);
