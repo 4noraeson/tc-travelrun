@@ -87,7 +87,7 @@ mysql_free_result($res);
 // get first post of last page of flower thread
 $sql = "select valint from config where configkey = 'LAST_FLOWER_PAGE'";
 $res = mysql_query($sql) or die(mysql_error());
-$lastflower = 30 * (mysql_result($res, 0, 0) - 1);
+$lastflower = 20 * (mysql_result($res, 0, 0) - 1);
 mysql_free_result($res);
 
 // close the database connection
@@ -112,7 +112,7 @@ if ($ratio < 0.0095) {
 echo '">update the data</a>. Thank you.<br>';
 echo '<span class="minor">There is also an <a href="manupdate.php">manual ';
 echo 'update feature</a> for isolated data on the ';
-echo '<a href="http://www.torn.com/forums.php?forumID=10&ID=14303015&start=', $lastflower, '">';
+echo '<a href="http://www.torn.com/forums.php#/p=treads&f=10&t=15907728&b=0&a=0&start=', $lastflower, '">'
 echo 'flower thread</a> (<i><a href="firstoflast.php">update link</a></i>).</span>';
 echo '</div>';
 
@@ -171,10 +171,9 @@ echo '</div>';
 
 if (isset($_SESSION['recent_update'])) {
   echo '<div class="pub"><br><i>';
-  echo 'If you want to <a href="http://www.torn.com/quote.php?';
-    echo 'forumID=10&ID=14303015&factionID=0&companyID=0&worldwar=0';
-    echo '&reply=1&start=', $lastflower, '">make a post in the ';
-    echo 'flower thread and advertise travelrun</a>, you can use the ';
+  echo 'If you want to ';
+    echo 'make a post in the ';
+    echo 'flower thread and advertise travelrun, you can use the ';
     echo 'code between the following lines:</i><br>';
   echo '================================================<br>';
     echo "{$_SESSION['recent_update']['qtd']} ";
