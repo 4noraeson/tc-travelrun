@@ -40,7 +40,7 @@ if ($n == 1) {
   $country = $matches[1];
   echo 'Country is: ', $country, '<br>';
 
-  $t = array('Alcohol', 'Defensive', 'Drug', 'Enhancer', 'Flower', 'Melee', 'Other', 'Plushie', 'Primary', 'Secondary', 'Temporary');
+  $t = array('Alcohol', 'Defensive', 'Drug', 'Enhancer', 'Flower', 'Medical', 'Melee', 'Other', 'Plushie', 'Primary', 'Secondary', 'Temporary');
   $rxt = implode('|', $t);
   $rx = '@(?:' . $rxt . ')\s+([0-9A-Z &a-z-]+)\s+\$([0-9,]+)\s+([0-9,]+)@';
   if (preg_match_all($rx, $dat, $matches, PREG_SET_ORDER)) {
