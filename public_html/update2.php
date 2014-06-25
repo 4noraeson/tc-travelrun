@@ -52,8 +52,10 @@ if ($n == 1) {
     }
     mysql_free_result($res_items);
 
-#   if (preg_match_all('@\s*([0-9A-Z &a-z-]+)\s+\$([0-9,]+)\s+([0-9,]+) in stock\s+Buy@', $_POST['data'], $matches, PREG_SET_ORDER)) {
-    if (preg_match_all('@\s*[a-zA-Z]*\s+([0-9A-Z &a-z-]+)\s+\$([0-9,]+)\s+([0-9,]+)\s+[0-9,]+\s+Buy@', $_POST['data'], $matches, PREG_SET_ORDER)) {
+    $t = array('Alcohol', 'Defensive', 'Drug', 'Enhancer', 'Flower', 'Melee', 'Other', 'Plushie', 'Primary', 'Secondary', 'Temporary');
+    $rxt = implode('|', $t);
+    $rx = '@(?:' . $rxt . ')\s+([0-9A-Z &a-z-]+)\s+\$([0-9,]+)\s+([0-9,]+)@';
+    if (preg_match_all($rx, $_POST['data'], $matches, PREG_SET_ORDER)) {
       foreach ($matches as $info) {
         $itemname = trim($info[1]);
         $itemcost = 1 * str_replace(',', '', $info[2]);
