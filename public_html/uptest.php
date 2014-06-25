@@ -22,6 +22,14 @@ if ($pid == 0) {
   exit(0);
 }
 
+$sql = "select valtext from config where configkey = 'FLOWER_PASS'";
+$res = mysql_query($sql) or die(mysql_error());
+if (mysql_num_rows($res) != 1) die('Database is mis-configured');
+$flowerkey = mysql_result($res, 0, 0);
+mysql_free_result($res);
+
+if ($_GET['k'] != $flowerkey) die('Bad k parameter');
+
 // get raw $_POST['data'] from the database
 $sql = "select postUTC, postdata from post where postid = $pid";
 $res = mysql_query($sql) or die(mysql_error());
