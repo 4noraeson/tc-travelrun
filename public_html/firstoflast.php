@@ -25,7 +25,7 @@ echo '</div><br><br>';
 
 echo '<div class="updateform">';
 echo '<form method="post" action="firstoflast2.php">';
-echo '<label>Last page in the flower thread: <input type="text" value="', $last1st, '" name="last1st"></label>';
+echo '<label>Last page in the flower thread: <input type="text" value="', $last1st, '" name="last1st" size="4"> possibly 1 more than the old value</label>';
 echo '<input type="submit" value="UPDATE"><br>';
 echo '</form>';
 echo '<br>For the example below, you\'d use 860 for the last page.<br>';
