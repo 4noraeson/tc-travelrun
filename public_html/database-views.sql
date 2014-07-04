@@ -31,3 +31,21 @@ CREATE VIEW lastdrugs AS
   )
   group by stock.item, stock.country;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'lastflowers'
+--
+
+CREATE VIEW lastflowers AS
+  select stock.item AS item,
+         stock.country AS country,
+         max(stock.utctime) AS lastutc
+  from stock
+  where stock.item in (
+    select item.itemid
+    from item
+    where (item.itemtype = 1)
+  )
+  group by stock.item, stock.country;
+
