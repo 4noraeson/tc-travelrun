@@ -42,10 +42,6 @@ CREATE VIEW lastflowers AS
          stock.country AS country,
          max(stock.utctime) AS lastutc
   from stock
-  where stock.item in (
-    select item.itemid
-    from item
-    where (item.itemtype = 1)
-  )
+  where stock.item in (260, 617, 263, 264, 267, 271, 272, 277, 276, 385, 282)
   group by stock.item, stock.country;
 
