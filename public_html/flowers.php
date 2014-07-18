@@ -62,7 +62,7 @@ foreach ($flowers as $d) {
     }
   }
 
-  echo '<tr class="', $oddgroup ? 'odd' : 'even', 'row">';
+  echo '<tr class="', $oddgroup ? 'odd' : 'even', 'row" id="f', $d[0], '">';
   echo '<td>&nbsp;', $d[1], '&nbsp;</td>';
   echo '<td>&nbsp;', $d[3], '&nbsp;</td>';
   echo '<td class="timedata">&nbsp;', number_format($delta, 0), ' ', $deltaunits, (($delta >= 1.5) ? 's' : ''), ' ago&nbsp;</td>';
