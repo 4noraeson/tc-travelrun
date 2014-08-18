@@ -233,6 +233,7 @@ echo '</div>';
 echo '<div class="footer">';
 echo '<i>Extra available options: <!-- <a href="css.php">css</a>, --><a href="prizes.php">prizes</a></i><br>';
 echo '<i>Source code available on a <a href="http://code.google.com/p/tc-travelrun/">subversion repository</a>.</i><br>';
+echo '<i>Travelrun supports <a href="irc://irc.torn.com/drugden">IRC channel #drugden</a>.</i><br>';
 echo '<i>Travelrun writen by <a href="http://www.torn.com/profiles.php?XID=1757971" target="new">ebcdic</a>. If you like this page, please consider <a href="http://www.torn.com/sendcash.php?XID=1275358" target="new">donating</a> to the cause...</i>';
 echo '</div>';
 
