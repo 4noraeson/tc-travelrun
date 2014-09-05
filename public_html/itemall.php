@@ -38,7 +38,7 @@ if (isset($_GET['f']) && (trim($_GET['f']) != '')) {
   $sql .= " and item.itemname like '%$safefilter%'";
 }
 
-$sql .= "order by 1 desc, 2, 3";
+$sql .= " order by 1 desc, 2, 3";
 $res = mysql_query($sql) or die(mysql_error());
 while ($row = mysql_fetch_row($res)) {
   $itemall[] = array($row[0], $row[1], $row[2], $row[3], $row[4]);
