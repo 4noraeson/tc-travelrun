@@ -36,7 +36,7 @@ mysql_close($conn);
 
 echo '<div class="drugdata">';
 echo '<table border="1">';
-echo '<tr><th>Flower</th><th>Country</th><th>Airstrip</th><th>oldness</th><th>Quantity</th><th>Price</th></tr>';
+echo '<tr><th>Flower</th><th>Country</th><th>oldness</th><th>Quantity</th><th>Price</th><th>Airstrip</th></tr>';
 $oddgroup = 0;
 foreach ($flowers as $d) {
   $oddgroup = 1 - $oddgroup;
@@ -65,6 +65,9 @@ foreach ($flowers as $d) {
   echo '<tr class="', $oddgroup ? 'odd' : 'even', 'row" id="f', $d[0], '">';
   echo '<td>&nbsp;', $d[1], '&nbsp;</td>';
   echo '<td>&nbsp;', $d[3], '&nbsp;</td>';
+  echo '<td class="timedata">&nbsp;', number_format($delta, 0), ' ', $deltaunits, (($delta >= 1.5) ? 's' : ''), ' ago&nbsp;</td>';
+  echo '<td class="valuedata">&nbsp;', number_format($d[6], 0, '', ','), '&nbsp;</td>';
+  echo '<td class="valuedata">&nbsp;$', number_format($d[5],0, '', ','), '&nbsp;</td>';
   $airstrip = '?????';
   if ($d[3] == 'Mexico') $airstrip = '00:18';
   if ($d[3] == 'Cayman Islands') $airstrip = '00:25';
@@ -78,9 +81,6 @@ foreach ($flowers as $d) {
   if ($d[3] == 'UAE') $airstrip = '03:10';
   if ($d[3] == 'South Africa') $airstrip = '03:28';
   echo '<td align="center">&nbsp;', $airstrip, '&nbsp;</td>';
-  echo '<td class="timedata">&nbsp;', number_format($delta, 0), ' ', $deltaunits, (($delta >= 1.5) ? 's' : ''), ' ago&nbsp;</td>';
-  echo '<td class="valuedata">&nbsp;', number_format($d[6], 0, '', ','), '&nbsp;</td>';
-  echo '<td class="valuedata">&nbsp;$', number_format($d[5],0, '', ','), '&nbsp;</td>';
   echo '</tr>';
 }
 echo '</table>';
