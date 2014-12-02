@@ -54,7 +54,8 @@ if ($n == 1) {
 
     $t = array('Alcohol', 'Defensive', 'Drug', 'Enhancer', 'Flower', 'Medical', 'Melee', 'Other', 'Plushie', 'Primary', 'Secondary', 'Temporary');
     $rxt = implode('|', $t);
-    $rx = '@(?:' . $rxt . ')(?:\s+x[0-9,]+)?\s+([0-9A-Z &a-z-]+)\s+\$([0-9,]+)\s+([0-9,]+)@';
+    #$rx = '@(?:' . $rxt . ')(?:\s+x[0-9,]+)?\s+([0-9A-Z &a-z-]+)\s+\$([0-9,]+)\s+([0-9,]+)@';
+    $rx = '@Type:\s+(?:' . $rxt . ')\s+(?:x[0-9,]+\s+)?([0-9A-Z &a-z-]+)\s+Cost:\s+\$([0-9,]+)\s+In\s+stock:\s+([0-9,]+)@';
     if (preg_match_all($rx, $_POST['data'], $matches, PREG_SET_ORDER)) {
       foreach ($matches as $info) {
         $itemname = trim($info[1]);
