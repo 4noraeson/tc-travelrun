@@ -41,6 +41,14 @@ mysql_free_result($res);
 mysql_close($conn);
 echo 'data from ', $utc, ' is <pre>', $dat, '</pre><br>~~~~~~~~<br>';
 
+// check for NaN and abort
+if (preg_match('/\s+NaN\s+/', $dat)) {
+  echo 'NaN detected. Cannot update. Go back, reload, copy and paste again.<br>';
+  echo '<br>';
+  echo '<a href="update.php">Update again</a><br>';
+  exit('');
+}
+
 // process $dat and display info
 $n = preg_match('/are in ([A-Z a-z]+) and have/', $dat, $matches);
 echo 'First match returned: ', $n, '<br>';

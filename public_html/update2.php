@@ -23,6 +23,14 @@ $r = mysql_real_escape_string($_SERVER['HTTP_REFERER']);
 $sql = "insert into post (postid, postUTC, postdata, user_agent, referer, sender) values (NULL, '$utc', '$pd', '$ua', '$r', '$s')";
 mysql_query($sql) or die(mysql_error());
 
+// check for NaN and abort
+if (preg_match('/\s+NaN\s+/', $dat)) {
+  echo 'NaN detected. Cannot update. Go back, reload, copy and paste again.<br>';
+  echo '<br>';
+  echo '<a href="update.php">Update again</a><br>';
+  exit('');
+}
+
 // process $_POST['data'] and save info to the database
 $n = preg_match('/are in ([A-Z a-z]+) and have/', $_POST['data'], $matches);
 if ($n == 1) {
