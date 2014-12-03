@@ -45,3 +45,18 @@ CREATE VIEW lastflowers AS
   where stock.item in (260, 617, 263, 264, 267, 271, 272, 277, 276, 385, 282)
   group by stock.item, stock.country;
 
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'lastplushies'
+--
+
+CREATE VIEW lastplushies AS
+  select stock.item AS item,
+         stock.country AS country,
+         max(stock.utctime) AS lastutc
+  from stock
+  where stock.item in (186, 187, 215, 258, 261, 266, 268, 269, 273, 274, 281, 384, 618)
+  group by stock.item, stock.country;
+
