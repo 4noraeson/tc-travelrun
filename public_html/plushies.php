@@ -29,7 +29,7 @@ order by stock.utctime
 SQL_PLUSHIES;
 $res = mysql_query($sql) or die(mysql_error());
 while ($row = mysql_fetch_row($res)) {
-  $flowers[] = array($row[0], $row[1], $row[2], $row[3], $row[4], $row[5], $row[6]);
+  $plushies[] = array($row[0], $row[1], $row[2], $row[3], $row[4], $row[5], $row[6]);
 }
 mysql_free_result($res);
 mysql_close($conn);

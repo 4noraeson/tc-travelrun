@@ -167,6 +167,7 @@ echo 'or view graph for <a href="itemgraph.php">specific items in a country</a> 
 
 echo '<br>';
 echo 'or look at the most recent <a href="flowers.php">flower</a> ';
+echo 'or <a href="plushies.php">plushies</a> ';
 echo 'or <a href="drugs.php">drug</a> ';
 echo 'or <a href="itemall.php">all items</a> ';
 echo 'information across all countries.';
