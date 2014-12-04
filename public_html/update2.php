@@ -24,7 +24,7 @@ $sql = "insert into post (postid, postUTC, postdata, user_agent, referer, sender
 mysql_query($sql) or die(mysql_error());
 
 // check for NaN and abort
-if (preg_match('/\s+NaN\s+/', $dat)) {
+if (preg_match('/\s+NaN\s+/', $_POST['data'])) {
   echo 'NaN detected. Cannot update. Go back, reload, copy and paste again.<br>';
   echo '<br>';
   echo '<a href="update.php">Update again</a><br>';
