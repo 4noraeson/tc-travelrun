@@ -50,7 +50,7 @@ echo '<div class="itemalldata">';
 echo '<table border="1">';
 echo '<tr><th>date</th><th>country</th><th>item</th><th>quantity</th><th>price</th></tr>';
 foreach ($itemall as $d) {
-  echo '<tr class="emptied">';
+  echo '<tr class="itemdata">';
   echo '<td>&nbsp;', $d[0], '&nbsp;</td>';
   echo '<td>&nbsp;', $d[1], '&nbsp;</td>';
   echo '<td>&nbsp;', $d[2], '&nbsp;</td>';
