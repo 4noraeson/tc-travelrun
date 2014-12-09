@@ -27,8 +27,7 @@ mysql_query($sql) or die(mysql_error());
 if (preg_match('/\s+NaN\s+/', $_POST['data'])) {
   echo 'NaN detected. Cannot update. Go back, reload, copy and paste again.<br>';
   echo '<br>';
-  echo '<a href="update.php">Update again</a><br>';
-  exit('');
+  exit('<a href="update.php">Update again</a><br>');
 }
 
 // process $_POST['data'] and save info to the database
@@ -51,7 +50,9 @@ if ($n == 1) {
     $_SESSION['recent_update'] = array();
     $_SESSION['recent_update']['country'] = $country;
     $_SESSION['recent_update']['flower'] = $fin;
+    $_SESSION['recent_update']['plushie'] = '';
     $gotflower = 0;
+    $gotplushie = 0;
     $items = array();
     $sql_items = "select itemname, itemid from item";
     $res_items = mysql_query($sql_items) or die(mysql_error());
@@ -79,12 +80,19 @@ if ($n == 1) {
             $_SESSION['recent_update']['qtd'] = $itemleft;
           }
         }
+        if (preg_match('/ Plushie/', $itemname)) {
+          $gotplushie = 1;
+          $_SESSION['recent_update']['plushie'] .= $itemleft . ' ' $itemname . '<br>';
+        }
       }
     }
     if (!$gotflower) {
       $_SESSION['recent_update']['qtd'] = 0;
       $sql5 = "insert into stock (stockid, utctime, country, item, price, quantity, manual, sender) values (NULL, utc_timestamp(), $cid, $fid, 0, 0, 0, '$s')";
       mysql_query($sql5) or die(mysql_error());
+    }
+    if (!$gotplushie) {
+      $_SESSION['recent_update']['plushie'] .= 'No plushies<br>';
     }
     if (mt_rand(0, 999999) < PRIZE_PER_MILLION) {
       $mindate = gmdate('Y-m-d H:i:s', time() - 25*60);

@@ -184,6 +184,7 @@ if (isset($_SESSION['recent_update'])) {
     echo "{$_SESSION['recent_update']['qtd']} ";
     echo "{$_SESSION['recent_update']['flower']} in ";
     echo "{$_SESSION['recent_update']['country']}<br>\n";
+    echo $_SESSION['recent_update']['plushie'];
     echo '<a href="http://travelrun.torncentral.com/">travelrun</a> updated.<br>';
     echo '================================================';
   echo '</div>';
