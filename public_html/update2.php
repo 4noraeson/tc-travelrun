@@ -88,7 +88,10 @@ if ($n == 1) {
     }
     if (!$gotflower) {
       $_SESSION['recent_update']['qtd'] = 0;
-      $sql5 = "insert into stock (stockid, utctime, country, item, price, quantity, manual, sender) values (NULL, utc_timestamp(), $cid, $fid, 0, 0, 0, '$s')";
+      $prices = array(0, 300, 4000, 600, 700, 5000, 500, 900, 500, 5000, 6000, 2000);
+      $price = 0;
+      if (isset($prices[$cid])) $price = $prices[$cid];
+      $sql5 = "insert into stock (stockid, utctime, country, item, price, quantity, manual, sender) values (NULL, utc_timestamp(), $cid, $fid, $price, 0, 0, '$s')";
       mysql_query($sql5) or die(mysql_error());
     }
     if (!$gotplushie) {
