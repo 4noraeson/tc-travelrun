@@ -26,7 +26,7 @@ CREATE TABLE country (
   flower int(11) NOT NULL,
   PRIMARY KEY (countryid),
   UNIQUE KEY letter (letter)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+);
 
 --
 -- Dumping data for table 'country'
@@ -54,7 +54,7 @@ CREATE TABLE counts (
   vkey varchar(12) COLLATE latin1_general_ci NOT NULL,
   `value` int(11) NOT NULL,
   PRIMARY KEY (vkey)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+);
 
 --
 -- Dumping data for table 'counts'
@@ -85,7 +85,7 @@ CREATE TABLE item (
   itemname varchar(100) COLLATE latin1_general_ci NOT NULL,
   PRIMARY KEY (itemid),
   KEY itemtype (itemtype)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+);
 
 --
 -- Dumping data for table 'item'
@@ -736,7 +736,7 @@ CREATE TABLE itemtype (
   itemtypename varchar(100) COLLATE latin1_general_ci NOT NULL,
   cssclass varchar(50) COLLATE latin1_general_ci NOT NULL,
   PRIMARY KEY (itemtypeid)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=25 ;
+);
 
 --
 -- Dumping data for table 'itemtype'
@@ -782,7 +782,7 @@ CREATE TABLE post (
   referer varchar(255) COLLATE latin1_general_ci NOT NULL,
   sender varchar(78) COLLATE latin1_general_ci NOT NULL DEFAULT ' ',
   PRIMARY KEY (postid)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=4023 ;
+);
 
 -- --------------------------------------------------------
 
@@ -798,7 +798,7 @@ CREATE TABLE prize (
   puser int(11) NOT NULL,
   pcountry varchar(32) COLLATE latin1_gengeral_ci NOT NULL,
   PRIMARY KEY (prizeid)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci ;
+);
 
 -- --------------------------------------------------------
 
@@ -818,7 +818,7 @@ CREATE TABLE stock (
   PRIMARY KEY (stockid),
   KEY country (country),
   KEY item (item)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=51013 ;
+);
 
 -- --------------------------------------------------------
 
