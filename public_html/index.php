@@ -110,8 +110,8 @@ if ($ratio < 0.0095) {
   echo number_format(100 * $ratio, 2), '%';
 }
 echo '">update the data</a>. Thank you.<br>';
-echo '<span class="minor">There is also an <a href="manupdate.php">manual ';
-echo 'update feature</a> for isolated data on the ';
+echo '<span class="minor">There used to be a manual ';
+echo 'update feature for isolated data on the ';
 echo '<a href="http://www.torn.com/forums.php#/p=treads&f=10&t=15907728&b=0&a=0&start=', $lastflower, '">';
 echo 'flower thread</a> (<i><a href="firstoflast.php">update link</a></i>).</span>';
 echo '</div>';
