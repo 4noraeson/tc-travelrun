@@ -112,7 +112,7 @@ if ($ratio < 0.0095) {
 echo '">update the data</a>. Thank you.<br>';
 echo '<span class="minor">There used to be a manual ';
 echo 'update feature for isolated data on the ';
-echo '<a href="http://www.torn.com/forums.php#/p=treads&f=10&t=15907728&b=0&a=0&start=', $lastflower, '">';
+echo '<a href="http://www.torn.com/forums.php#!p=threads&f=10&t=15907728&b=0&a=0&start=', $lastflower, '">';
 echo 'flower thread</a> (<i><a href="firstoflast.php">update link</a></i>).</span>';
 echo '</div>';
 
@@ -176,7 +176,7 @@ echo '</div>';
 if (isset($_SESSION['recent_update'])) {
   echo '<div class="pub"><br><i>';
   echo 'If you want to ';
-    echo '<a href="http://www.torn.com/forums.php#/p=treads&f=10&t=15907728&b=0&a=0&start=600000">';
+    echo '<a href="http://www.torn.com/forums.php#!p=threads&f=10&t=15907728&b=0&a=0&start=999999">';
     echo 'make a post in the ';
     echo 'flower thread and advertise travelrun</a>, you can use the ';
     echo 'code between the following lines:</i><br>';
