@@ -1,0 +1,34 @@
+body { background-color: black; color: lightsalmon; }
+a:link { background-color: black; color: orangered; }
+a:visited { background-color: black; color: orangered; }
+a:hover { background-color: black; color: orangered; }
+a:active { background-color: black; color: orangered; }
+.minor { font-size: smaller; }
+.valuedata { text-align: right; }
+.timedata { text-align: center; }
+
+div.timeinfo {}
+div.updatelinks {}
+div.nav {}
+div.itemdata {}
+div.flowerchart {}
+div.footer {}
+
+tr.default { background-color: black; color: orange; }
+tr.drug { background-color: black; color: orange; }
+tr.flower { background-color: black; color: orange; }
+tr.plushie { background-color: black; color: orange; }
+tr.alcohol { background-color: black; color: orange; }
+tr.misc { background-color: black; color: orange; }
+
+div.drugnav {}
+div.drugdata {}
+div.drugdata tr.oddrow {}
+div.drugdata tr.evenrow {}
+
+div.updatenav {}
+div.updateform {}
+
+div.mantitle {}
+div.mannav {}
+div.manform {}
